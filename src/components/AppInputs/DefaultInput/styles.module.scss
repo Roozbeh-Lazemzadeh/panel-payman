@@ -44,8 +44,6 @@
   }
 }
 
-.ant-input-clear-icon {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+:global(.ant-input-clear-icon) {
+  display: flex;
 }
