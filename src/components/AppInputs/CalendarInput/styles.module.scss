@@ -1,0 +1,176 @@
+.calendar-input {
+  min-width: 22rem;
+
+  @media (max-width: 1450px) {
+    min-width: 19rem;
+  }
+
+  @media (min-width: 1600px) {
+    min-width: 17rem;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  &__container {
+    position: relative;
+    border: 1px solid #cdcdd0;
+    border-radius: 8px;
+    height: 3rem;
+
+    :global(.rmdp-container) {
+      margin-top: unset;
+      width: 50%;
+      position: unset;
+      height: 100% !important;
+    }
+
+    :global(.rmdp-input) {
+      padding: 0rem 0.4rem 0rem 5rem;
+      width: 100%;
+      height: 100% !important;
+      background: #ffffff;
+      border-width: 0 !important;
+      border-style: none;
+      border-color: #cdcdd0;
+      border-radius: 8px !important;
+      margin: unset !important;
+      color: transparent;
+
+      &::placeholder {
+        color: rgba(16, 24, 40, 0.2);
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.6rem 0.9rem;
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--from {
+      right: calc(50% - 3rem);
+    }
+
+    &--to {
+      left: -0.4rem;
+    }
+
+    svg {
+      vertical-align: middle;
+    }
+  }
+
+  &__divider {
+    position: absolute;
+    height: 3rem;
+    color: #cdcdd0;
+    right: 50%;
+    top: 50%;
+    transform: translate(calc(-50%), -50%);
+    border-right: 0.1rem solid #cdcdd0;
+  }
+
+  &__date-label {
+    position: absolute;
+    display: inline-block;
+    padding: 0.3rem 0.85rem;
+    color: rgba(16, 24, 40, 0.2);
+    font-weight: 500;
+    font-size: 1rem;
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--from {
+      right: 5%;
+      top: 50%;
+      transform: translate(15%, -45%);
+
+      @media (max-width: 1199px) {
+        width: 39%;
+      }
+    }
+
+    &--to {
+      right: 55%;
+      top: 50%;
+      transform: translate(15%, -45%);
+      @media (max-width: 1199px) {
+        width: 38%;
+      }
+    }
+
+    &--filled {
+      color: rgba(16, 24, 40, 1);
+    }
+  }
+}
+
+// Additional styles for the DatePicker component
+.rmdp-mobile {
+  .rmdp-arrow-container {
+    height: 2.2rem;
+    width: 2.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    padding-top: 0.2rem;
+  }
+}
+
+:global(.rmdp-action-buttons) {
+  justify-content: unset !important;
+  flex-direction: row-reverse;
+  gap: 3rem;
+  :nth-child(1) {
+    background-color: rgba(239, 242, 255, 1);
+    padding: 1rem 7.5rem;
+    border-radius: 5px;
+  }
+
+  :nth-child(1):hover {
+    background-color: rgba(239, 242, 255, 1);
+  }
+
+  :nth-child(2) {
+    background-color: #0072ff !important;
+    color: #fff;
+    padding: 1rem 10rem;
+    border-radius: 5px;
+  }
+}
+
+.rmdp-rtl {
+  .rmdp-range-hover,
+  .rmdp-range {
+    &.start:not(.force),
+    &.end:not(.force) {
+      border-radius: 0.5rem !important;
+      background-color: hsl(226deg 32% 44%) !important;
+      color: #fff !important;
+    }
+  }
+
+  .rmdp-range {
+    background-color: hsl(220deg 90% 95%) !important;
+    box-shadow: unset !important;
+    color: #000 !important;
+  }
+}
+
+:global(.rmdp-time-picker) {
+  div > input {
+    padding: 5px 1px !important;
+  }
+}

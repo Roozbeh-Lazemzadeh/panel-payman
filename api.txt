@@ -1,0 +1,23 @@
+<DetailsModal title='جزئیات گزارش تراکنش‌ها'>
+        <div className={`${styles['detailsModal']}`}>
+          <div className={`${styles['detailsModal__side-left']}`}>
+            {Array.from({ length: 7 }, (_, index) => (
+              <div key={index} className={`${styles['detailsModal__item']}`}>
+                <div className={`${styles['detailsModal__item-title']}`}>
+                  بانک:
+                </div>
+                <span>.......................</span>
+                <div className={`${styles['detailsModal__item-value']}`}>
+                  سامان
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className={`${styles['detailsModal__divider']}`}></div>
+          <div className={`${styles['detailsModal__side-right']}`}>
+            {Array.from({ length: 5 }, (_, index) => (
+              <p key={index}>Some contents contents contents...</p>
+            ))}
+          </div>
+        </div>
+      </DetailsModal>

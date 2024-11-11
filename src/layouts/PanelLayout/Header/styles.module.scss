@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 2.6rem;
+
+  &__name {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &--no-space {
+    padding-bottom: 0rem;
+  }
+
+  &--border {
+    border-bottom: 1px solid var(--Deactivate-CheckBox);
+  }
+}

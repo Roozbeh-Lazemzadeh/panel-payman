@@ -1,0 +1,14 @@
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px 0 10px;
+  margin: 30px 0 30px;
+  height: 40px;
+  & .sidebar-arrow {
+    cursor: pointer;
+  }
+}
+
+.sidebar-header.stretch {
+  padding: 0 12px;
+}

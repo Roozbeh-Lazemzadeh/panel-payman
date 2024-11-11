@@ -1,0 +1,45 @@
+.customTab {
+  height: calc(100vh - 6rem);
+
+  :global {
+    .ant-tabs-top {
+      height: 100%;
+    }
+    .ant-tabs-content {
+      height: 100%;
+      .ant-tabs-tabpane {
+        height: 100%;
+      }
+    }
+    .ant-tabs-nav {
+      .ant-tabs-nav-list {
+        display: flex;
+        gap: 4rem;
+      }
+
+      .ant-tabs-tab {
+        padding-block: 0rem;
+        padding-bottom: 0.8rem;
+        margin: 0;
+
+        &.ant-tabs-tab-active {
+          color: var(--SecondaryColor);
+          background: linear-gradient(
+            360deg,
+            rgba(255, 104, 59, 0.05) 5.7%,
+            rgba(255, 104, 59, 0) 93.2%
+          );
+
+          .ant-tabs-tab-btn {
+            color: var(--SecondaryColor);
+          }
+        }
+      }
+      .ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
+        height: 0.2rem;
+        border-radius: 0.5rem;
+        background: var(--SecondaryColor);
+      }
+    }
+  }
+}

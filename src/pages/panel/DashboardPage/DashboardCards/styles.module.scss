@@ -1,0 +1,110 @@
+.dashboard-report {
+  margin-top: 2.56rem;
+
+  &__header-title {
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-left: 0.65rem;
+    border-left: 1px solid #cdcdd0;
+    height: 1.25rem;
+  }
+
+  &__header-selected {
+    border: none;
+    min-width: 10rem;
+  }
+
+  :global(
+      .ant-select-outlined:not(.ant-select-disabled):not(
+          .ant-select-customize-input
+        ):not(.ant-pagination-size-changer):hover
+        .ant-select-selector
+    ) {
+    border: none !important;
+  }
+
+  :global(.ant-select-selector) {
+    border: none !important;
+    background-color: #fafafa !important;
+  }
+
+  :global(.ant-select-single.ant-select-open .ant-select-selection-item) {
+    color: #000;
+  }
+
+  &__carts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 0.5rem;
+    margin-top: 1.3rem;
+    height: 12rem;
+    position: relative;
+  }
+
+  &__cart-item {
+    width: 25rem;
+    height: 12rem;
+    border-radius: 0.625rem;
+    border: 1px solid #0072ff33;
+    box-shadow: 0px 4px 17px -9px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    padding-block: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'IranYekanBold';
+    position: relative;
+
+    .cart-item__title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 2rem;
+      width: 64%;
+      margin: 0 auto;
+      @media (max-width: 1528px) {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: normal;
+      }
+    }
+    .cart-item__amount {
+      font-size: 1.6rem;
+      font-weight: bold;
+      @media (max-width: 1528px) {
+        font-size: 1.5rem;
+      }
+    }
+    .cart-item__update-message {
+      color: #7b7b7b;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 1528px) {
+      width: 20rem;
+      height: 10rem;
+    }
+
+    @media (max-width: 1280px) {
+      width: 19.6rem;
+      height: 10rem;
+    }
+  }
+}
+
+.danger-square {
+  position: absolute;
+  left: 0.5rem;
+  &__tooltip-panel {
+    position: absolute !important;
+    left: 0.5rem;
+    :global(.ant-tooltip-inner) {
+      color: #fff !important;
+      font-size: .9rem;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

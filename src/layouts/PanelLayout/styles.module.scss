@@ -1,0 +1,10 @@
+.panelLayout {
+  height: 100dvh;
+  background-color: #fafafa;
+
+  &__main {
+    flex: 1;
+    overflow: hidden;
+    padding: 1.5rem 1.25rem 0;
+  }
+}

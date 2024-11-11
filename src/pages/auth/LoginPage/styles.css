@@ -1,0 +1,222 @@
+.login-wrapper {
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+  background-color: #fafafa;
+  background-image: url('./assets/login/pattern.svg');
+  display: flex;
+  box-sizing: border-box;
+  direction: rtl;
+  overflow: hidden;
+}
+
+.login-wrapper_img {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -4%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* margin-right: -9rem; */
+}
+
+.login-img {
+  width: 308px;
+  height: 205px;
+  z-index: 0;
+}
+
+.swiper-wrapper {
+  height: 100%;
+  width: 40%;
+  z-index: 1;
+  display: flex;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    #0c8dfe 0%,
+    #118eff 3.31%,
+    #188eff 7.42%,
+    #1a8bff 12.37%,
+    #1889ff 15.43%,
+    #1887fe 18.07%,
+    #1d86ff 21.98%,
+    #1e82ff 25.72%,
+    #2184ff 28.83%,
+    #2383ff 33.1%,
+    #2681ff 36.26%,
+    #2a84fe 39.64%,
+    #2b85ff 43.24%,
+    #3689ff 46.12%,
+    #3a8bff 49.15%,
+    #3f8eff 51.86%,
+    #4492fe 54.87%,
+    #4d97ff 56.54%,
+    #5199ff 58.62%,
+    #569dfe 60.62%,
+    #5ba0ff 62.52%,
+    #5fa2ff 64.92%,
+    #63a6ff 67.53%,
+    #63a4ff 70.61%,
+    #63a4fe 73.3%,
+    #61a1ff 75.21%,
+    #5fa2ff 76.54%,
+    #5da3ff 78.28%,
+    #5ba0ff 80.64%,
+    #589fff 82.06%,
+    #549dff 84.39%,
+    #4e99ff 86.89%,
+    #4896ff 88.79%,
+    #4293fe 90.53%,
+    #3b8ffe 92.96%,
+    #358cfe 94.82%,
+    #2f89ff 96.56%,
+    #2c87ff 97.55%,
+    #2383ff 100%
+  );
+}
+
+.swiper-slide {
+  text-align: center;
+  height: 100%;
+  font-size: 18px;
+  background: linear-gradient(
+    180deg,
+    #0c8dfe 0%,
+    #118eff 3.31%,
+    #188eff 7.42%,
+    #1a8bff 12.37%,
+    #1889ff 15.43%,
+    #1887fe 18.07%,
+    #1d86ff 21.98%,
+    #1e82ff 25.72%,
+    #2184ff 28.83%,
+    #2383ff 33.1%,
+    #2681ff 36.26%,
+    #2a84fe 39.64%,
+    #2b85ff 43.24%,
+    #3689ff 46.12%,
+    #3a8bff 49.15%,
+    #3f8eff 51.86%,
+    #4492fe 54.87%,
+    #4d97ff 56.54%,
+    #5199ff 58.62%,
+    #569dfe 60.62%,
+    #5ba0ff 62.52%,
+    #5fa2ff 64.92%,
+    #63a6ff 67.53%,
+    #63a4ff 70.61%,
+    #63a4fe 73.3%,
+    #61a1ff 75.21%,
+    #5fa2ff 76.54%,
+    #5da3ff 78.28%,
+    #5ba0ff 80.64%,
+    #589fff 82.06%,
+    #549dff 84.39%,
+    #4e99ff 86.89%,
+    #4896ff 88.79%,
+    #4293fe 90.53%,
+    #3b8ffe 92.96%,
+    #358cfe 94.82%,
+    #2f89ff 96.56%,
+    #2c87ff 97.55%,
+    #2383ff 100%
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: inherit !important;
+  object-fit: cover;
+}
+
+.login-container {
+  height: 100%;
+  width: 60%;
+  padding-block: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 9999999999999999999999999;
+}
+
+/* .swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: var(--swiper-pagination-bottom, 8px);
+  top: var(--swiper-pagination-top, auto);
+  left: 47%;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding-inline: -16rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6%;
+  padding-block: 3px;
+  border-radius: 20px;
+} */
+
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.swiper-pagination-bullet-active {
+  background: #ffffff;
+}
+
+@media screen and (max-width: 1620px) {
+  .swiper-slide img {
+    /* width: 645px !important; */
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .swiper-slide img {
+    /* width: 645px !important; */
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 1256px) {
+  .swiper-slide img {
+    /* width: 530px !important; */
+    height: 100% !important;
+  }
+
+  .swiper-pagination-fraction,
+  .swiper-pagination-custom,
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: 10%;
+    left: 45%;
+  }
+}
+
+@media screen and (max-width: 985px) {
+  .swiper-slide img {
+    width: 430px !important;
+  }
+}
+
+/* @media screen and (min-width: 1545px) {
+  .swiper-slide {
+   
+    height: 80%;
+  }
+} */

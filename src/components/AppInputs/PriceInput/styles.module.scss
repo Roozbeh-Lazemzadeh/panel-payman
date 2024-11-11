@@ -1,0 +1,113 @@
+.price-input {
+  direction: rtl;
+  min-width: 22rem;
+
+  @media (max-width: 1450px) {
+    min-width: 19rem;
+  }
+
+  @media (min-width: 1600px) {
+    min-width: 17rem;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+  }
+
+  &__inputs-wrapper {
+    display: flex;
+    position: relative;
+  }
+
+  &__field {
+    width: 100%;
+    text-align: right;
+    font-size: 1rem;
+    direction: rtl;
+    text-align: right;
+
+    // Styling the input placeholder
+    &::placeholder {
+      color: var(--text-DeactivateOp);
+      font-size: 1rem;
+    }
+
+    // Styling the input itself
+    input {
+      padding: 8px 12px;
+      border: 1px solid #d9d9d9;
+      height: 3rem;
+
+      &:focus {
+        border-color: #40a9ff;
+        box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+        outline: none;
+      }
+    }
+  }
+  &__from {
+    right: 0;
+    width: 50%;
+    input {
+      border-radius: 0px;
+      border-bottom-right-radius: 8px !important;
+      border-top-right-radius: 8px !important;
+      border-left: none;
+      font-size: 14px;
+      &:focus {
+        box-shadow: none;
+        outline: none;
+        border: 1px solid #d9d9d9;
+        border-left: none;
+      }
+      &:hover {
+        outline: none;
+        border: 1px solid #d9d9d9;
+        border-left: none;
+      }
+    }
+    :global(.ant-input-group-addon) {
+      border-right: none;
+      border-left: none;
+      border-bottom-left-radius: 0px;
+      border-top-left-radius: 0px;
+      background-color: #fff;
+      svg {
+        vertical-align: bottom;
+      }
+    }
+  }
+
+  &__to {
+    left: 0;
+    width: 50%;
+    input {
+      border-radius: 0px;
+      font-size: 14px;
+      border-left: none;
+      &:focus {
+        box-shadow: none;
+        outline: none;
+        border: 1px solid #d9d9d9;
+        border-left: none;
+      }
+      &:hover {
+        outline: none;
+        border: 1px solid #d9d9d9;
+        border-left: none;
+      }
+    }
+    :global(.ant-input-group-addon) {
+      background-color: #fff;
+      border-right: none;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      svg {
+        vertical-align: bottom;
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+.select-input {
+  direction: rtl;
+  min-width: 20rem;
+
+  @media (max-width: 1450px) {
+    min-width: 19rem;
+  }
+
+  @media (min-width: 1600px) {
+    min-width: 17rem;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+  }
+
+  &__field {
+    width: 100%;
+    text-align: right;
+    font-size: 1rem;
+    height: 3rem;
+
+    // Styling the input placeholder
+    :global(.ant-select-selection-placeholder) {
+      color: var(--text-DeactivateOp);
+      font-size: 1rem;
+    }
+
+    // Styling the input itself
+    input {
+      padding: 8px 12px;
+      border: 1px solid #d9d9d9;
+      border-radius: 4px;
+
+      &:focus {
+        border-color: #40a9ff;
+        outline: none;
+      }
+    }
+  }
+
+  &__option {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+  }
+
+  &__icon {
+    margin-left: 0.5rem;
+  }
+
+  &__label {
+    flex-grow: 1;
+    font-size: 1.1rem;
+  }
+}
+
+.select-render-list {
+  direction: ltr;
+  overflow-y: auto;
+  overflow-x: hidden;
+  :global(.ant-input-outlined:focus) {
+    box-shadow: none;
+  }
+
+  :global(.ant-input-outlined) {
+    box-shadow: unset;
+    border-bottom: 1px solid var(--Hover-CheckBox);
+  }
+
+  &__options {
+    direction: rtl;
+    text-align: right;
+  }
+
+  &__search {
+    direction: rtl;
+    text-align: right;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 0;
+
+    input {
+      &::placeholder {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+:global(.ant-select-multiple .ant-select-selection-overflow) {
+  flex-wrap: nowrap !important;
+  overflow: hidden;
+}

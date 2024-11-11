@@ -1,0 +1,24 @@
+.logout {
+  display: flex;
+  align-items: center;
+  padding-right: 30px;
+  gap: 10px;
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  height: 22px;
+}
+.sidebar-wrapper.close .logout {
+  padding-right: 36px;
+}
+.exit-text {
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.exit-text.hidden {
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  margin-right: -60px;
+}

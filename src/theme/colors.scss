@@ -1,0 +1,43 @@
+:root {
+  /* Colors */
+  --PrimaryColor: #0072ff;
+  --SecondaryColor: #ff683b;
+  --PrimaryColorOP: rgba(0, 114, 255, 0.2);
+  --PrimaryBackground: rgba(250, 250, 250, 1);
+  --Deactivate: #acacac;
+  --text-Deactivate: rgba(255, 255, 255, 0.5);
+  --Deactivate-Check: rgba(255, 255, 255, 0.2);
+  --Original: #ffffff;
+  --Hover-CheckBox: rgba(235, 235, 235, 0.6);
+  --Deactivate-CheckBox: rgba(172, 172, 172, 0.2);
+  --Normal-Text: rgba(16, 24, 40, 1);
+  --text-DeactivateOp: rgba(16, 24, 40, 0.2);
+  --Error-color: #ff3672;
+  --Error-Background: rgba(255, 54, 114, 0.2);
+  --Bug: #ffb800;
+  --Bug-Background: rgba(255, 184, 0, 0.2);
+  --Stroke: #cdcdd0;
+  --Hover: #0072ff;
+  --select: #eff2ff;
+
+  /* Secondary Colors */
+  --SecondaryBackground: rgba(255, 104, 59, 0.2);
+  --Point2-Hover: rgba(255, 170, 27, 0.2);
+  --Point3-Hover: rgba(116, 139, 249, 0.2);
+  --Point4-Hover: rgba(0, 226, 97, 0.2);
+  --Point5-Hover: rgba(110, 27, 255, 0.2);
+  --Point6-Hover: rgba(249, 116, 240, 0.2);
+
+  /* Fill Colors */
+  --Fill-1: rgba(89, 37, 220, 0.2);
+  --Fill-2: rgba(46, 144, 250, 0.2);
+  --Fill-3: rgba(18, 183, 106, 0.2);
+  --Fill-4: rgba(2, 106, 162, 0.2);
+  --Fill-5: rgba(196, 66, 10, 0.2);
+  --Fill-6: rgba(216, 254, 221, 0.2);
+  --Point2-fill: rgba(255, 170, 27, 0.2);
+  --Point3-fill: rgba(116, 139, 249, 0.2);
+  --Point4-fill: rgba(0, 226, 97, 1);
+  --Point5-fill: rgba(110, 27, 255, 0.2);
+  --Point6-fill: rgba(249, 116, 240, 0.2);
+}

@@ -1,0 +1,30 @@
+@import 'colors';
+@import 'fonts';
+@import 'scrollbar';
+@import 'components';
+@import 'antd/dist/reset.css';
+@import 'react-multi-date-picker/styles/layouts/mobile.css';
+
+:root {
+  // new added
+  font-family: 'IranYekan', Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  line-height: 1.3;
+  color: var(--Normal-Text);
+  background-color: var(--PrimaryBackground);
+  font-synthesis: none;
+  font-size: 12px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  //
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+}
+
+
+

@@ -1,0 +1,35 @@
+.custom-btn {
+  font-size: 1.2rem;
+  border-radius: 0.3125rem;
+
+  // Modifiers
+  &--primary {
+    background-color: var(--PrimaryColor);
+    color: #fff;
+    height: 3.4rem;
+    border-radius: 0.42rem;
+    border: none;
+    &:hover {
+      background-color: var(--PrimaryColor) !important;
+      color: #fff !important;
+    }
+  }
+
+  &--secondary {
+    background-color: var(--PrimaryColorOP);
+    color: var(--PrimaryColor);
+    border-color: var(--PrimaryColor);
+    height: 2.7rem;
+
+    &:hover {
+      background-color: var(--PrimaryColorOP) !important;
+    }
+  }
+
+  &--default {
+    background-color: #fff;
+    color: var(--PrimaryColor);
+    border-color: var(--PrimaryColor);
+    height: 2.7rem;
+  }
+}

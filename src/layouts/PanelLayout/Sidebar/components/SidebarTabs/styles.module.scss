@@ -1,0 +1,44 @@
+.custom-sidebar-tabs {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  cursor: pointer;
+  :global(.ant-tabs-content-holder) {
+    flex: none !important;
+  }
+}
+
+.custom-sidebar-tabs > :global(.ant-tabs-nav) {
+  :global(.ant-tabs-tab) {
+    padding: 8px 36px;
+    margin: 20px 0 0;
+  }
+}
+:global(.ant-tabs-tab) {
+  font-weight: 500;
+  gap: 10px;
+}
+
+:global(.ant-tabs-tab-btn) span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+:global(.ant-tabs-tab.ant-tabs-tab-active) {
+  background: linear-gradient(
+    270deg,
+    rgba(0, 114, 255, 0.05) 5.7%,
+    rgba(0, 114, 255, 0) 93.2%
+  );
+  color: var(--PrimaryColor);
+}
+
+/*  handling sidebar window  */
+
+.sidebar-wrapper.close .custom-sidebar-tabs > :global(.ant-tabs-nav) {
+  :global(.ant-tabs-tab) {
+    padding: 8px 36px;
+  }
+}

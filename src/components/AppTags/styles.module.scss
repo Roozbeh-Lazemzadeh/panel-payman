@@ -1,0 +1,27 @@
+.custom-tag {
+  font-size: 1rem;
+  border-radius: 0.3125rem;
+  width: 7rem;
+  height: 2.5rem;
+  border: none !important;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  // Modifiers
+  &--red {
+    background-color: var(--Error-Background);
+    color: var(--Error-color);
+  }
+
+  &--green {
+    background-color: var(--Point4-Hover);
+    color: var(--Point4-fill);
+  }
+
+  &--yellow {
+    background-color: var(--Bug-Background);
+    color: var(--Bug);
+  }
+}

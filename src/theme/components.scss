@@ -1,0 +1,50 @@
+// Checkbox styles
+.ant-checkbox-wrapper {
+  position: relative;
+  z-index: 99999999999999;
+
+  .ant-checkbox {
+    .ant-checkbox-inner {
+      border-color: var(--Deactivate);
+      background-color: var(--Deactivate-CheckBox);
+      border-radius: 5px;
+      width: 18px;
+      height: 18px;
+      &:after {
+        border-color: var(--PrimaryColor);
+      }
+    }
+
+    &.ant-checkbox-checked {
+      .ant-checkbox-inner {
+        background-color: var(--PrimaryColorOP);
+        border-color: var(--PrimaryColor);
+      }
+    }
+  }
+
+  &:hover {
+    .ant-checkbox-inner {
+      &::after {
+        border-color: #fff !important;
+      }
+    }
+  }
+}
+
+// select input
+.ant-select-dropdown
+  .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+  background-color: var(--ant-select-option-selected-bg);
+}
+
+.ant-select-selector {
+  cursor: pointer !important;
+  border-radius: 8px !important;
+}
+
+//drop down
+.ant-dropdown-menu-item:hover {
+  background-color: #e6f4ff !important;
+}
+

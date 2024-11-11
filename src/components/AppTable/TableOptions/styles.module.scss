@@ -1,0 +1,67 @@
+.table-options {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.5rem;
+  padding-block: 0.5rem;
+  background-color: #f7f9fb;
+  border-top-right-radius: 0.625rem;
+  border-top-left-radius: 0.625rem;
+  font-size: 0.75rem;
+
+  &__export {
+    padding-left: 1.5rem;
+    border-left: 1px solid var(--Stroke);
+    button {
+      direction: ltr;
+    }
+  }
+
+  &__select-records {
+    width: 12rem !important;
+    padding: 0;
+    :global(.ant-select-item[title='نمایش تعداد ۲۰ تا']),
+    :global(.ant-select-item[title='نمایش تعداد ۵۰ تا']) {
+      border-bottom: 1px solid var(--Stroke);
+      border-radius: 0;
+    }
+  }
+}
+
+.custom-dropdown-excel {
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 !important;
+  }
+  ul > li {
+    font-size: 1rem !important;
+    width: 100%;
+    text-align: center;
+    padding-block: 0.7rem !important;
+  }
+  ul {
+    li:first-child,
+    li:nth-child(2) {
+      border-bottom: 1px solid var(--Stroke);
+      border-radius: 0 !important;
+    }
+  }
+}
+
+:global {
+  .ant-dropdown {
+    .ant-dropdown-menu {
+      .ant-dropdown-menu-item:hover {
+        background-color: unset;
+      }
+    }
+  }
+}
+
+.custom-dropdown-column > ul {
+  height: 13rem;
+  overflow-y: auto;
+}

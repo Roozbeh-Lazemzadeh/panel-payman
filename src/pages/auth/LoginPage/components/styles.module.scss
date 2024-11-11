@@ -1,0 +1,202 @@
+.send-wrapper {
+  width: 50% !important;
+}
+
+.send-header {
+  text-align: center;
+  color: #101828;
+  padding-bottom: 40px;
+}
+
+.send-header span {
+  display: block;
+}
+
+.login-header_paragraph {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.login-header_span {
+  font-weight: 500;
+  font-size: 14px;
+  padding-top: 20px !important;
+}
+
+.login-header_alert {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(16, 24, 40, 0.2);
+  // padding-top: 20px !important;
+}
+
+/* Style for the input text */
+.login-send_input {
+  text-align: center !important;
+  direction: ltr;
+  height: 44px !important;
+  font-size: 24px;
+  border-radius: 10px;
+  font-family: 'IranYekan';
+}
+
+/* Style for the input placeholder */
+.login-send_input::placeholder {
+  text-align: center;
+  direction: rtl;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'IranYekan';
+}
+
+.login-send_btn {
+  margin-top: 55px !important;
+  padding-block: 23px !important;
+  font-family: 'IranYekan';
+  border-radius: 10px;
+}
+
+:global(.ant-input) {
+  text-align: left;
+  font-size: 24px;
+  direction: ltr;
+  font-family: 'IranYekan';
+}
+
+:global(.ant-input::placeholder) {
+  font-size: 14px;
+  font-weight: 600;
+  direction: rtl !important;
+}
+
+.check-wrapper,
+.check-wrapper_form {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+}
+
+:global(.ant-otp) {
+  column-gap: 30px !important;
+  padding-top: 20px !important;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.check-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.check-header p {
+  margin: unset !important;
+}
+
+.login-check_btn {
+  margin-top: 60px;
+  padding-block: 23px !important;
+  background-color: rgba(172, 172, 172, 1);
+  font-weight: 600;
+  font-family: 'IranYekan';
+  border-radius: 10px;
+}
+
+.login-check_btn-blue {
+  margin-top: 60px;
+  padding-block: 23px !important;
+  background-color: #0072ff;
+  font-weight: 600;
+  font-family: 'IranYekan';
+  border-radius: 10px;
+}
+
+.login-header_number {
+  color: var(--PrimaryColor, #0072ff);
+  font-size: 1.2rem;
+  font-family: 'IranYekanBold';
+}
+
+.check-timer_end {
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 3rem;
+  padding-bottom: 2px;
+  color: #ff683b;
+  border-bottom: 1px solid #ff683b;
+}
+
+:global(.ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover) {
+  background-color: rgba(172, 172, 172, 1);
+}
+
+:global(.ant-input-outlined.ant-otp-input) {
+  width: 40px !important;
+  height: 44px !important;
+  border-radius: 10px;
+}
+
+.login-return_btn {
+  margin-top: 30px;
+  padding-block: 23px !important;
+  background-color: rgba(0, 114, 255, 0.2);
+  color: rgba(0, 114, 255, 1);
+  border: 1px solid rgba(0, 114, 255, 1);
+  font-weight: 600;
+  font-family: 'IranYekan';
+  border-radius: 10px;
+}
+
+.login-return_btn:hover {
+  color: rgba(0, 114, 255, 1) !important;
+  background-color: rgba(0, 114, 255, 0.2) !important;
+}
+
+.login-check_img {
+  width: 20px;
+  height: 20px;
+}
+
+.check-timer {
+  margin-top: 30px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.container-inputsOTP {
+  column-gap: 30px !important;
+  padding-top: 20px !important;
+  display: flex;
+  flex-direction: row-reverse;
+  &__item {
+    width: 40px !important;
+    height: 44px !important;
+    border-radius: 10px;
+    font-size: 2rem;
+    border: 1px solid var(--Stroke, #cdcdd0);
+  }
+  &__item-red {
+    width: 40px !important;
+    height: 44px !important;
+    border-radius: 10px;
+    font-size: 2rem;
+    border: 1px solid var(--Error-color, #FF3672)
+  }
+  &__item:focus {
+    border: 1px solid #3b82f6;
+    outline: none;
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+}
+
+.input-error {
+  font-size: 12px;
+  color: #ff3672;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-block: 10px;
+  height: 1rem;
+}

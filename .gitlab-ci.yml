@@ -1,0 +1,50 @@
+default:
+  tags:
+    - iis
+    - test
+    - webapi
+    - windows
+
+stages:
+  - build
+  - deploy
+
+variables:
+  BUILD_DIR: "dist"
+  BUILD_CONFIGURATION: "production"  # Adjust if necessary
+
+before_script:
+  - git config --global core.longpaths true  # Enable long paths for Git
+
+build:
+  stage: build
+  script:
+    - echo "Installing dependencies and building the React project..."
+    - pnpm install # Install dependencies
+    - pnpm run build  # Build for production (output is typically in the 'build' folder)
+    - echo "Build completed. No cleanup required."  # Prevent cleanup if necessary
+
+  artifacts:
+    paths:
+      - $BUILD_DIR/  # Save build artifacts for deployment
+  only:
+    - develop  # Adjust to your branch name, e.g., 'Development'
+
+deploy:
+  stage: deploy
+  image: mcr.microsoft.com/dotnet/sdk:8.0  # Use .NET image to access IIS tools
+  script:
+    - echo "Deploying React app to IIS..."
+    - $src = "$CI_PROJECT_DIR/$BUILD_DIR"
+    - $dest = '\\192.168.40.10\C$\inetpub\wwwroot\B2bPanel'  # Replace with actual path
+    
+    # Stop IIS site to prevent file lock issues
+    - powershell -Command "try { Import-Module WebAdministration; Stop-Website 'B2bPanel'; } catch { Write-Host 'Failed to stop website.'; exit 1 } "
+
+    # Copy all files except web.config
+    - powershell -Command "try { Copy-Item -Path $src\* -Destination $dest -Recurse -Force -Exclude 'web.config' } catch { Write-Host 'Failed to copy the src items to destination path.'; exit 1 }"
+    
+    # Start IIS site after deployment
+    - powershell -Command "try { Import-Module WebAdministration; Start-Website 'B2bPanel'; } catch { Write-Host 'Failed to start website.'; exit 1 }"
+  only:
+    - develop  # Adjust to your branch name, e.g., 'Development'

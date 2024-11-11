@@ -1,0 +1,27 @@
+.details-modal {
+  :global(.ant-modal-body) {
+    // margin-top: 1.5rem;
+    // padding-top: 1.5rem;
+  }
+  :global(.ant-modal-close) {
+    display: none;
+  }
+
+  &__btn-right {
+    width: 60%;
+    padding-block: 0.8rem !important ;
+  }
+
+  &__btn-left {
+    width: 37%;
+  }
+}
+
+.modal-header {
+  border-bottom: 1px solid #cdcdd0;
+  padding-bottom: 1.5rem;
+
+  &__title {
+    font-size: 1.2rem;
+  }
+}
