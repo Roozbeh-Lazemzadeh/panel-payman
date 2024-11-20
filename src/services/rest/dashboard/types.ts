@@ -1,7 +1,7 @@
 import { AxiosRequestConfig } from 'axios';
 
 export type ReportsGetRequest = {
-  queryParams: { range: 'daily' | 'weekly' | 'monthnly' };
+  queryParams: { range: 'daily' | 'weekly' | 'monthly' };
   pathParams: { report_type: 'transactions' | 'paymans' };
   axiosConfig?: AxiosRequestConfig;
 };

@@ -1,8 +1,8 @@
 import { ReportsGetRequest, ReportsGetResponse } from './types';
 import { client } from 'services/clients';
 import { QueryKey, useQuery, UseQueryOptions } from '@tanstack/react-query';
-import mock from './mock';
 import delayed from 'utils/delayed';
+import getMockData from './mock';
 
 const isMock = true;
 
@@ -11,7 +11,7 @@ const reportsGetURL = (request?: ReportsGetRequest) => {
 };
 
 export const reportsGetFn = async (request: ReportsGetRequest) => {
-  if (isMock) return delayed(mock[request.pathParams.report_type]);
+  if (isMock) return delayed(getMockData(request.pathParams.report_type));
 
   const { data } = await client.request<ReportsGetResponse>({
     method: 'GET',
@@ -24,7 +24,11 @@ export const reportsGetFn = async (request: ReportsGetRequest) => {
 };
 
 export const reportsGetKeygen = (request?: ReportsGetRequest) => {
-  return [reportsGetURL(request), request].filter(Boolean) as QueryKey;
+  return [
+    reportsGetURL(request),
+    request?.pathParams.report_type,
+    request?.queryParams?.range
+  ].filter(Boolean) as QueryKey;
 };
 
 export const useReportsGetQuery = (

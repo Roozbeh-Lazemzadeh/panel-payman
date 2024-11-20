@@ -4,7 +4,7 @@ const routes = {
   panel: {
     dashboard: {
       path: () => '/panel/dashboard',
-      title: 'داشبورد'
+      title: 'dashboard'
     },
     paymans: {
       path: () => '/panel/reports/paymans',

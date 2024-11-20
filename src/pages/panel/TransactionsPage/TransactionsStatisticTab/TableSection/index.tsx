@@ -14,16 +14,16 @@ const TableSection: FC = () => {
   });
 
   const columnFilters = Object.keys({
-    بانک: '',
-    'تاریخ شروع تراکنش': '',
-    'تاریخ پایان تراکنش': '',
-    'مجموع تراکنش‌ها': '',
-    'مجموع تعداد': '',
-    'تعداد موفق': '',
-    'تعداد ناموفق': '',
-    'عدم موجودی': '',
-    'دلایل دیگر': '',
-    نامشخص: ''
+    Bank: '',
+    'Transaction Starting Date': '',
+    'Transaction Ending Date': '',
+    'Total Transactions': '',
+    'Total Count': '',
+    'Succeeded Count': '',
+    'Failed Count': '',
+    'Insufficient Balance': '',
+    'Other Reasons': '',
+    Unknown: ''
   }).map((key) => ({
     value: key,
     label: key
@@ -32,7 +32,7 @@ const TableSection: FC = () => {
   const columns: TableColumnsType = [
     {
       width: 150,
-      title: 'بانک',
+      title: 'Bank',
       dataIndex: 'SourceBankName',
       key: 'SourceBankName',
       sorter: (a, b) => {
@@ -44,7 +44,7 @@ const TableSection: FC = () => {
     },
     {
       width: 200,
-      title: 'تاریخ شروع تراکنش',
+      title: 'Transaction Starting Date',
       dataIndex: 'TransactionStartingDate',
       key: 'TransactionStartingDate',
       sorter: (a, b) => {
@@ -55,7 +55,7 @@ const TableSection: FC = () => {
     },
     {
       width: 200,
-      title: 'تاریخ پایان تراکنش',
+      title: 'Transaction Ending Date',
       dataIndex: 'TransactionEndingDate',
       key: 'TransactionEndingDate',
       sorter: (a, b) => {
@@ -66,21 +66,21 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'مجموع تراکنش‌ها',
+      title: 'Total Transactions',
       dataIndex: 'TotalAmount',
       key: 'TotalAmount',
       sorter: (a, b) => (a.TotalAmount as number) - (b.TotalAmount as number)
     },
     {
       width: 150,
-      title: 'مجموع تعداد',
+      title: 'Total Count',
       dataIndex: 'TotalCount',
       key: 'TotalCount',
       sorter: (a, b) => (a.TotalCount as number) - (b.TotalCount as number)
     },
     {
       width: 150,
-      title: 'تعداد موفق',
+      title: 'Succeeded Count',
       dataIndex: 'SucceededTransactionsCount',
       key: 'SucceededTransactionsCount',
       sorter: (a, b) =>
@@ -89,7 +89,7 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'تعداد ناموفق',
+      title: 'Failed Count',
       dataIndex: 'FailedTransactionsCount',
       key: 'FailedTransactionsCount',
       sorter: (a, b) =>
@@ -98,7 +98,7 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'عدم موجودی',
+      title: 'Insufficient Balance',
       dataIndex: 'BalanceFailedTransactionsCount',
       key: 'BalanceFailedTransactionsCount',
       sorter: (a, b) =>
@@ -107,7 +107,7 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'دلایل دیگر',
+      title: 'Other Reasons',
       dataIndex: 'OtherFailedTransactionsCount',
       key: 'OtherFailedTransactionsCount',
       sorter: (a, b) =>
@@ -116,7 +116,7 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'نامشخص',
+      title: 'Unknown',
       dataIndex: 'UnknownTransactionsCount',
       key: 'UnknownTransactionsCount',
       sorter: (a, b) =>

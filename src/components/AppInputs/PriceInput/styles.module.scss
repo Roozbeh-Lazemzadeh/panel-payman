@@ -1,5 +1,5 @@
 .price-input {
-  direction: rtl;
+  direction: ltr;
   min-width: 22rem;
 
   @media (max-width: 1450px) {
@@ -12,7 +12,7 @@
 
   &__title {
     margin-bottom: 8px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
     color: #333;
   }
@@ -24,15 +24,20 @@
 
   &__field {
     width: 100%;
-    text-align: right;
-    font-size: 1rem;
-    direction: rtl;
-    text-align: right;
+    text-align: left;
+    font-size: 1.1rem;
+    direction: lrt;
 
     // Styling the input placeholder
-    &::placeholder {
-      color: var(--text-DeactivateOp);
-      font-size: 1rem;
+    :global {
+      .ant-input {
+        font-family: 'PoppinsRegular400';
+
+        &::placeholder {
+          color: var(--text-DeactivateOp);
+          font-size: 1rem;
+        }
+      }
     }
 
     // Styling the input itself
@@ -49,31 +54,31 @@
     }
   }
   &__from {
-    right: 0;
+    left: 0;
     width: 50%;
     input {
       border-radius: 0px;
-      border-bottom-right-radius: 8px !important;
-      border-top-right-radius: 8px !important;
-      border-left: none;
+      border-bottom-left-radius: 8px !important;
+      border-top-left-radius: 8px !important;
+      border-right: none;
       font-size: 14px;
       &:focus {
         box-shadow: none;
         outline: none;
         border: 1px solid #d9d9d9;
-        border-left: none;
+        border-right: none;
       }
       &:hover {
         outline: none;
         border: 1px solid #d9d9d9;
-        border-left: none;
+        border-right: none;
       }
     }
     :global(.ant-input-group-addon) {
       border-right: none;
       border-left: none;
-      border-bottom-left-radius: 0px;
-      border-top-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      border-top-right-radius: 0px;
       background-color: #fff;
       svg {
         vertical-align: bottom;
@@ -82,29 +87,29 @@
   }
 
   &__to {
-    left: 0;
+    right: 0;
     width: 50%;
     input {
       border-radius: 0px;
       font-size: 14px;
-      border-left: none;
+      border-right: none;
       &:focus {
         box-shadow: none;
         outline: none;
         border: 1px solid #d9d9d9;
-        border-left: none;
+        border-right: none;
       }
       &:hover {
         outline: none;
         border: 1px solid #d9d9d9;
-        border-left: none;
+        border-right: none;
       }
     }
     :global(.ant-input-group-addon) {
       background-color: #fff;
-      border-right: none;
-      border-top-left-radius: 8px;
-      border-bottom-left-radius: 8px;
+      border-left: none;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
       svg {
         vertical-align: bottom;
       }

@@ -1,7 +1,7 @@
 import { ThemeConfig } from 'antd';
 
 const token: ThemeConfig['token'] = {
-  fontFamily: 'IranYekan',
+  fontFamily: 'PoppinsRegular400',
   colorText: 'rgba(16, 24, 40, 1)'
 };
 

@@ -27,46 +27,34 @@
   font-size: 14px;
   font-weight: 500;
   color: rgba(16, 24, 40, 0.2);
-  // padding-top: 20px !important;
 }
 
 /* Style for the input text */
 .login-send_input {
-  text-align: center !important;
+  text-align: center;
   direction: ltr;
-  height: 44px !important;
+  height: 44px;
   font-size: 24px;
   border-radius: 10px;
-  font-family: 'IranYekan';
-}
-
-/* Style for the input placeholder */
-.login-send_input::placeholder {
-  text-align: center;
-  direction: rtl;
-  font-size: 14px;
-  font-weight: 600;
-  font-family: 'IranYekan';
+  font-family: 'PoppinsRegular400';
+  line-height: 44px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  &::placeholder {
+    color: var(--text-DeactivateOp);
+    font-size: 1.2rem;
+    position: relative;
+    top: -10%;
+    display: inline-block;
+  }
 }
 
 .login-send_btn {
   margin-top: 55px !important;
   padding-block: 23px !important;
-  font-family: 'IranYekan';
+  font-family: 'PoppinsRegular400';
   border-radius: 10px;
-}
-
-:global(.ant-input) {
-  text-align: left;
-  font-size: 24px;
-  direction: ltr;
-  font-family: 'IranYekan';
-}
-
-:global(.ant-input::placeholder) {
-  font-size: 14px;
-  font-weight: 600;
-  direction: rtl !important;
 }
 
 .check-wrapper,
@@ -100,7 +88,7 @@
   padding-block: 23px !important;
   background-color: rgba(172, 172, 172, 1);
   font-weight: 600;
-  font-family: 'IranYekan';
+  font-family: 'PoppinsRegular400';
   border-radius: 10px;
 }
 
@@ -109,14 +97,14 @@
   padding-block: 23px !important;
   background-color: #0072ff;
   font-weight: 600;
-  font-family: 'IranYekan';
+  font-family: 'PoppinsRegular400';
   border-radius: 10px;
 }
 
 .login-header_number {
   color: var(--PrimaryColor, #0072ff);
   font-size: 1.2rem;
-  font-family: 'IranYekanBold';
+  font-family: 'PoppinsMedium500';
 }
 
 .check-timer_end {
@@ -126,10 +114,6 @@
   padding-bottom: 2px;
   color: #ff683b;
   border-bottom: 1px solid #ff683b;
-}
-
-:global(.ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover) {
-  background-color: rgba(172, 172, 172, 1);
 }
 
 :global(.ant-input-outlined.ant-otp-input) {
@@ -145,7 +129,7 @@
   color: rgba(0, 114, 255, 1);
   border: 1px solid rgba(0, 114, 255, 1);
   font-weight: 600;
-  font-family: 'IranYekan';
+  font-family: 'PoppinsRegular400';
   border-radius: 10px;
 }
 
@@ -166,6 +150,7 @@
 }
 
 .container-inputsOTP {
+  direction: rtl;
   column-gap: 30px !important;
   padding-top: 20px !important;
   display: flex;
@@ -182,7 +167,7 @@
     height: 44px !important;
     border-radius: 10px;
     font-size: 2rem;
-    border: 1px solid var(--Error-color, #FF3672)
+    border: 1px solid var(--Error-color, #ff3672);
   }
   &__item:focus {
     border: 1px solid #3b82f6;
@@ -199,4 +184,5 @@
   gap: 5px;
   margin-block: 10px;
   height: 1rem;
+  direction: ltr;
 }

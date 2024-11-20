@@ -4,60 +4,60 @@ import OrangeDot from 'assets/Icons/OrangeDot';
 import YellowDot from 'assets/Icons/YellowDot';
 
 const bankOptions = [
-  { key: '1', label: 'saman', value: 'سامان' },
-  { key: '2', label: 'mellat', value: 'ملت' },
-  { key: '3', label: 'tejarat', value: 'تجارت' },
-  { key: '4', label: 'melli', value: 'ملی' }
+  { key: '1', label: 'saman', value: 'Saman' },
+  { key: '2', label: 'mellat', value: 'Mellat' },
+  { key: '3', label: 'tejarat', value: 'Tejarat' },
+  { key: '4', label: 'melli', value: 'Melli' }
 ];
 const transactionStatusOptions = [
   {
     key: '1',
     label: 'successful',
-    value: 'موفق',
+    value: 'Successful',
     icon: <GreenDot />
   },
   {
     key: '2',
     label: 'unsuccessful',
-    value: 'ناموفق',
+    value: 'Unsuccessful',
     icon: <RedDot />
   },
   {
     key: '3',
     label: 'pending',
-    value: 'منتظر تایید',
+    value: 'Pending Approval',
     icon: <OrangeDot />
   },
   {
     key: '4',
     label: 'canceled',
-    value: 'لغو شده',
+    value: 'Canceled',
     icon: <YellowDot />
   },
   {
     key: '5',
     label: 'expired',
-    value: 'منقضی شده',
+    value: 'Expired',
     icon: <RedDot />
   }
 ];
 const paymanStatusOptions = [
   {
     key: '1',
-    label: 'successful',
-    value: 'فعال',
+    label: 'active',
+    value: 'Active',
     icon: <GreenDot />
   },
   {
     key: '2',
-    label: 'unsuccessful',
-    value: 'غیرفعال',
+    label: 'inactive',
+    value: 'Inactive',
     icon: <RedDot />
   },
   {
     key: '3',
-    label: 'pending',
-    value: 'در حال ایجاد',
+    label: 'in progress',
+    value: 'In Progress',
     icon: <YellowDot />
   }
 ];

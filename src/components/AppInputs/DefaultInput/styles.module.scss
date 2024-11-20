@@ -22,23 +22,26 @@
     height: 3rem;
     border-radius: 8px;
 
-    // Styling the input placeholder
-    &::placeholder {
-      color: var(--text-DeactivateOp);
-      font-size: 1rem;
-    }
+    // Global styles for the input
+    :global {
+      .ant-input {
+        font-size: 1rem;
+        padding: 8px 12px;
+        border: 1px solid #d9d9d9;
+        text-align: start;
+        direction: ltr;
+        font-family: 'PoppinsRegular400';
 
-    // Styling the input itself
-    input {
-      padding: 8px 12px;
-      border: 1px solid #d9d9d9;
-      text-align: start !important;
-      direction: rtl;
+        &::placeholder {
+          color: var(--text-DeactivateOp);
+          font-size: 1rem;
+        }
 
-      &:focus {
-        border-color: #40a9ff;
-        box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
-        outline: none;
+        &:focus {
+          border-color: #40a9ff;
+          box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+          outline: none;
+        }
       }
     }
   }

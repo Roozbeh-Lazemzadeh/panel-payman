@@ -38,12 +38,12 @@ const Sidebar: React.FC = () => {
 
   const getReportsArrowIcon = () => {
     if (selectedKey !== '2') {
-      return <ArrowLeft2 />;
+      return <ArrowLeft2 style={{ transform: 'rotate(180deg)' }} />;
     }
     if (activeSubMenu && reportsExpanded) {
       return <ArrowDown2 />;
     } else if (activeSubMenu && !reportsExpanded) {
-      return <ArrowLeft />;
+      return <ArrowLeft style={{ transform: 'rotate(180deg)' }} />;
     } else {
       return null;
     }
@@ -55,12 +55,12 @@ const Sidebar: React.FC = () => {
         <CustomTooltip
           sidebarOpen={sidebarOpen}
           align={{ offset: [50, 0] }}
-          title='داشبورد'
+          title='Dashboard'
         >
           <span
             className={`${styles.text} ${!sidebarOpen ? styles.hidden : ''}`}
           >
-            داشبورد
+            Dashboard
           </span>
         </CustomTooltip>
       ),
@@ -76,12 +76,12 @@ const Sidebar: React.FC = () => {
           <CustomTooltip
             sidebarOpen={sidebarOpen}
             align={{ offset: [50, 0] }}
-            title='گزارشات'
+            title='Reports'
           >
             <span
               className={`${styles.text} ${!sidebarOpen ? styles.hidden : ''}`}
             >
-              گزارشات
+              Reports
             </span>
           </CustomTooltip>
           {getReportsArrowIcon()}
@@ -100,12 +100,12 @@ const Sidebar: React.FC = () => {
         <CustomTooltip
           sidebarOpen={sidebarOpen}
           align={{ offset: [50, 0] }}
-          title='پرسش‌های متداول'
+          title='FAQ'
         >
           <span
             className={`${styles.text} ${!sidebarOpen ? styles.hidden : ''}`}
           >
-            پرسش‌های متداول
+            FAQ
           </span>
         </CustomTooltip>
       ),
@@ -124,12 +124,12 @@ const Sidebar: React.FC = () => {
         <CustomTooltip
           sidebarOpen={sidebarOpen}
           align={{ offset: [50, 0] }}
-          title='پشتیبان فنی سیستم'
+          title='Technical support'
         >
           <span
             className={`${styles.text} ${!sidebarOpen ? styles.hidden : ''}`}
           >
-            پشتیبان فنی سیستم
+            Technical support
           </span>
         </CustomTooltip>
       ),

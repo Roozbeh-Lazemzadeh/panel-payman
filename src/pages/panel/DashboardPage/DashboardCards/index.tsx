@@ -5,6 +5,7 @@ import Card from './Card/Card';
 import styles from './styles.module.scss';
 import { useReportsGetQuery } from 'services/rest/dashboard';
 import { ReportsGetRequest } from 'services/rest/dashboard/types';
+import SkeletonCart from 'components/AppSkeleton/SkeletonCart';
 
 type DashboardCardsProps = PropsWithChildren<{
   titleComponent: string;
@@ -18,7 +19,7 @@ const DashboardCards: FC<DashboardCardsProps> = ({
   const [range, setRange] =
     useState<ReportsGetRequest['queryParams']['range']>('daily');
 
-  const { data } = useReportsGetQuery({
+  const { data, isFetching } = useReportsGetQuery({
     pathParams: { report_type: reportType },
     queryParams: { range }
   });
@@ -35,14 +36,20 @@ const DashboardCards: FC<DashboardCardsProps> = ({
           onChange={setRange}
           suffixIcon={<ArrowDown />}
           options={[
-            { value: 'daily', label: 'روزانه' },
-            { value: 'weekly', label: '7 روز گذشته' },
-            { value: 'monthly', label: '۳۰ روز گذشته' }
+            { value: 'daily', label: 'daily' },
+            { value: 'weekly', label: 'weekly' },
+            { value: 'monthly', label: 'monthly' }
           ]}
         />
       </div>
       <div className={styles['dashboard-report__carts']}>
-        <Card dataMock={data?.result} />
+        {isFetching ? (
+          Array.from({ length: 4 }).map((_, index) => (
+            <SkeletonCart key={`skeleton-${index}`} />
+          ))
+        ) : (
+          <Card dataMock={data?.result} />
+        )}
       </div>
     </div>
   );

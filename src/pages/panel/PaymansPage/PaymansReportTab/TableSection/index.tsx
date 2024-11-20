@@ -17,15 +17,15 @@ const TableSection: FC = () => {
   });
 
   const columnFilters = Object.keys({
-    'نام کاربر': '',
-    'کد ملی': '',
-    'شماره موبایل': '',
-    بانک: '',
-    'وضعیت پیمان': '',
-    'شناسه پیمان': '',
-    'شناسه پیگیری': '',
-    'تاریخ شروع': '',
-    'تاریخ پایان': ''
+    'User Name': '',
+    'National Code': '',
+    'Phone Number': '',
+    Bank: '',
+    'Payman Status': '',
+    'Payman ID': '',
+    'Tracking ID': '',
+    'Start Date': '',
+    'End Date': ''
   }).map((key) => ({
     value: key,
     label: key
@@ -34,7 +34,7 @@ const TableSection: FC = () => {
   const columns: TableColumnsType = [
     {
       width: 150,
-      title: 'نام کاربر',
+      title: 'User Name',
       dataIndex: 'Name',
       key: 'Name',
       sorter: (a, b) => {
@@ -43,19 +43,19 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'کد ملی',
+      title: 'National Code',
       dataIndex: 'NationalCode',
       key: 'NationalCode'
     },
     {
       width: 150,
-      title: 'شماره موبایل',
+      title: 'Phone Number',
       dataIndex: 'PhoneNumber',
       key: 'PhoneNumber'
     },
     {
       width: 150,
-      title: 'بانک',
+      title: 'Bank',
       dataIndex: 'SourceBankName',
       key: 'SourceBankName',
       sorter: (a, b) => {
@@ -67,14 +67,14 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'وضعیت پیمان',
+      title: 'Payman Status',
       dataIndex: 'Status',
       key: 'Status',
       render: (_, record) => {
         const modifier =
-          record.Status === 'فعال'
+          record.Status === 'Active'
             ? 'green'
-            : record.Status === 'غیرفعال'
+            : record.Status === 'Inactive'
               ? 'red'
               : '';
 
@@ -86,19 +86,19 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'شناسه پیمان',
+      title: 'Payman ID',
       dataIndex: 'Umr',
       key: 'Umr'
     },
     {
       width: 150,
-      title: 'شناسه پیگیری',
+      title: 'Tracking ID',
       dataIndex: 'Umr',
       key: 'Umr'
     },
     {
       width: 150,
-      title: 'تاریخ شروع',
+      title: 'Start Date',
       dataIndex: 'PaymanStartDate',
       key: 'PaymanStartDate',
       sorter: (a, b) => {
@@ -109,7 +109,7 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'تاریخ پایان',
+      title: 'End Date',
       dataIndex: 'PaymanEndDate',
       key: 'PaymanEndDate',
       sorter: (a, b) => {
@@ -120,14 +120,14 @@ const TableSection: FC = () => {
     }
   ];
   const actionsColumn = {
-    width: 180,
-    title: 'دسترسی‌ها',
+    width: 150,
+    title: 'Actions',
     key: 'actions',
     fixed: 'right' as const,
     render: () => (
       <Space size='middle'>
         <AppButton style={{ width: '8rem' }} modifier='secondary'>
-          جزئیات
+          Details
         </AppButton>
       </Space>
     )

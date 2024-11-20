@@ -8,17 +8,17 @@ const TransactionsPage: FC = () => {
   const tabItems = [
     {
       key: '1',
-      label: 'گزارش تراکنش ها',
+      label: 'Transaction Reports',
       children: <TransactionsReportTab key='report' />
     },
     {
       key: '2',
-      label: 'گزارش آماری تراکنش ها',
+      label: 'Transaction Statistics Report',
       children: <TransactionsStatisticTab key='statistic' />
     },
     {
       key: '3',
-      label: 'گزارش تراکنش های بازپرداخت',
+      label: 'Refund Transaction Reports',
       children: <TransactionsRefundTab key='refund' />
     }
   ];

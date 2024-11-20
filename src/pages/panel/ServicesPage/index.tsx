@@ -7,12 +7,12 @@ const ServicesPage: FC = () => {
   const tabItems = [
     {
       key: '1',
-      label: 'گزارش فراخوانی سرویس‌ها',
+      label: 'Service Invocation Report',
       children: <ServicesReportTab />
     },
     {
       key: '2',
-      label: 'گزارش آماری فراخوانی سرویس‌ها',
+      label: 'Statistical Report of Service Invocations',
       children: <ServicesStatisticTab />
     }
   ];

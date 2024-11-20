@@ -5,8 +5,8 @@
     color: #000;
     font-size: 1.2rem;
     font-weight: 600;
-    padding-left: 0.65rem;
-    border-left: 1px solid #cdcdd0;
+    padding-right: 0.65rem;
+    border-right: 1px solid #cdcdd0;
     height: 1.25rem;
   }
 
@@ -54,8 +54,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-family: 'IranYekanBold';
+    font-family: 'PoppinsMedium500';
     position: relative;
+    background-color: #fff;
 
     .cart-item__title {
       font-size: 1.2rem;
@@ -101,7 +102,7 @@
     left: 0.5rem;
     :global(.ant-tooltip-inner) {
       color: #fff !important;
-      font-size: .9rem;
+      font-size: 0.9rem;
       display: flex !important;
       align-items: center;
       justify-content: center;

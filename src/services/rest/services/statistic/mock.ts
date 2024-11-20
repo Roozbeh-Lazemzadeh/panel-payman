@@ -8,10 +8,10 @@ const mock: APICallsStatisticGetResponse = {
 
     return {
       Id: (i + 1).toString(),
-      BankTitle: ['ملی', 'صادرات', 'ملت', 'تجارت'][
+      BankTitle: ['Mellat', 'Saderat', 'Mellat', 'Tejarat'][
         Math.floor(Math.random() * 4)
       ],
-      Service: ['شارژ', 'پرداخت قبض', 'انتقال وجه', 'خرید'][
+      Service: ['Charge', 'Bill Payment', 'Money Transfer', 'Purchase'][
         Math.floor(Math.random() * 4)
       ],
       SucceededCount: succeededCount,

@@ -14,15 +14,15 @@ type TableOptionsProps = {
 
 const items: MenuProps['items'] = [
   {
-    label: 'خروجی اکسل صفحه جاری',
+    label: 'Export current page to Excel',
     key: '1'
   },
   {
-    label: 'خروجی اکسل تمام صفحات',
+    label: 'Export all pages to Excel',
     key: '2'
   },
   {
-    label: 'خروجی اکسل موارد انتخاب شده',
+    label: 'Export selected items to Excel',
     key: '3'
   }
 ];
@@ -38,16 +38,12 @@ const TableOptions: FC<TableOptionsProps> = ({ columnFilters }) => {
   const [selectedColumns, setSelectedColumns] = useAtom(selectedColumnsAtom);
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [selectedCount, setSelectedCount] = useAtom(selectedCountAtom); // Use Jotai atom
-  const [displayValue, setDisplayValue] = useState('تعداد ۲۰ تا');
+  const [displayValue, setDisplayValue] = useState('Show 20');
 
   const handleCountChange = (value: string) => {
     setSelectedCount(value); // Update global state with the selected value
     setDisplayValue(
-      value === '20'
-        ? 'تعداد ۲۰ تا'
-        : value === '50'
-          ? 'تعداد ۵۰ تا'
-          : 'تعداد ۱۰۰ تا'
+      value === '20' ? 'Show 20' : value === '50' ? 'Show 50' : 'Show 100'
     );
   };
 
@@ -105,22 +101,22 @@ const TableOptions: FC<TableOptionsProps> = ({ columnFilters }) => {
           trigger={['click']}
           overlayClassName={styles['custom-dropdown-excel']}
         >
-          <Button icon={<Excel />}>خروجی اکسل</Button>
+          <Button icon={<Excel />}>Export to Excel</Button>
         </Dropdown>
       </div>
       <Select
-        defaultValue='تعداد ۲۰ تا'
+        defaultValue='Show 20'
         style={{ width: '9rem' }}
         suffixIcon={<ArrowDownOrange />}
         onChange={handleCountChange}
         popupClassName={styles['table-options__select-records']}
         placement='bottomLeft'
-        title={`تعداد ${selectedCount} تا`}
+        title={`Show ${selectedCount}`}
         value={displayValue}
       >
-        <Select.Option value='20'>نمایش تعداد ۲۰ تا</Select.Option>
-        <Select.Option value='50'>نمایش تعداد ۵۰ تا</Select.Option>
-        <Select.Option value='100'>نمایش تعداد ۱۰۰ تا</Select.Option>
+        <Select.Option value='20'>Display 20 rows</Select.Option>
+        <Select.Option value='50'>Display 50 rows</Select.Option>
+        <Select.Option value='100'>Display 100 rows</Select.Option>
       </Select>
 
       <Dropdown
@@ -132,7 +128,7 @@ const TableOptions: FC<TableOptionsProps> = ({ columnFilters }) => {
         open={dropdownVisible}
       >
         <Button iconPosition='end' icon={<ArrowDownOrange />}>
-          نمایش ستون‌ها
+          Show columns
         </Button>
       </Dropdown>
     </div>

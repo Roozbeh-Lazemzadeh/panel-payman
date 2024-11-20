@@ -5,14 +5,14 @@ import './style.scss';
 type ToastIcon = ToastOptions['icon'];
 
 const toastOptions: ToastOptions = {
-  position: 'top-right',
+  position: 'top-left',
   autoClose: 5000,
   hideProgressBar: false,
   closeOnClick: true,
   pauseOnHover: true,
   draggable: true,
   progress: undefined,
-  rtl: true,
+  // ltr: true,
   closeButton: false
 };
 const copiedToastOptions: ToastOptions = {
@@ -23,7 +23,7 @@ const copiedToastOptions: ToastOptions = {
   pauseOnHover: true,
   draggable: true,
   progress: undefined,
-  rtl: true,
+  // rtl: true,
   closeButton: false,
   icon: false,
   transition: Slide,
@@ -38,7 +38,7 @@ const showCheckedOptions: ToastOptions = {
   pauseOnHover: true,
   draggable: true,
   progress: undefined,
-  rtl: true,
+  // rtl: true,
   closeButton: false,
   icon: false,
   transition: Slide,

@@ -23,7 +23,7 @@ const Header: FC = () => {
         className={`${styles.header} ${!border ? styles['header--no-space'] : ''}`}
       >
         <Filimo />
-        <span className={styles['header__name']}>مهدی دریس خوش آمدید</span>
+        <span className={styles['header__name']}>Welcome, John</span>
       </Flex>
       {border && <div className={styles['header--border']} />}
     </>

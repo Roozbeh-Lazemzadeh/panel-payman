@@ -49,40 +49,40 @@ const SidebarSubMenu: React.FC<SidebarSubMenuProps> = ({
       <CustomTooltip
         sidebarOpen={sidebarOpen}
         align={{ offset: [29, 0] }}
-        title='پیمان‌ها'
+        title='Mandates'
       >
         <div
           className={`${styles['submenu-item']} ${isPaymansActive ? styles.active : ''}`}
           onClick={(e) => handleSubMenuClick('paymans', e)}
         >
           {isPaymansActive ? <PaymanActive /> : <Payman />}
-          {sidebarOpen && <span>پیمان‌ها</span>}
+          {sidebarOpen && <span>Mandates</span>}
         </div>
       </CustomTooltip>
       <CustomTooltip
         sidebarOpen={sidebarOpen}
         align={{ offset: [29, 0] }}
-        title='تراکنش‌ها'
+        title='Transactions'
       >
         <div
           className={`${styles['submenu-item']} ${isTransactionsActive ? styles.active : ''}`}
           onClick={(e) => handleSubMenuClick('transactions', e)}
         >
           {isTransactionsActive ? <DocumentActive /> : <Document />}
-          {sidebarOpen && <span>تراکنش‌ها</span>}
+          {sidebarOpen && <span>Transactions</span>}
         </div>
       </CustomTooltip>
       <CustomTooltip
         sidebarOpen={sidebarOpen}
         align={{ offset: [29, 0] }}
-        title='فراخوانی سرویس‌ها'
+        title='service calls'
       >
         <div
           className={`${styles['submenu-item']} ${isServiceActive ? styles.active : ''}`}
           onClick={(e) => handleSubMenuClick('services', e)}
         >
           {isServiceActive ? <SendActive /> : <Send />}
-          {sidebarOpen && <span>فراخوانی سرویس‌ها</span>}
+          {sidebarOpen && <span>service calls</span>}
         </div>
       </CustomTooltip>
     </div>

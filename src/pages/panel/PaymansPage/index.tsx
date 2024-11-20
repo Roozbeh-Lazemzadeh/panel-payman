@@ -6,12 +6,12 @@ import PaymansStatisticsReportTab from './PaymansStatisticsReportTab';
 const tabItems = [
   {
     key: '1',
-    label: 'گزارش پیمان‌ها',
+    label: 'Mandate Reports',
     children: <PaymansReportTab />
   },
   {
     key: '2',
-    label: 'گزارش آماری پیمان‌ها',
+    label: 'Mandate Statistical Reports',
     children: <PaymansStatisticsReportTab />
   }
 ];

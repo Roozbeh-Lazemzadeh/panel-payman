@@ -22,43 +22,6 @@
     }
   }
 
-
-  :global(.ant-table-wrapper .ant-table-fixed-column-gapped .ant-table-cell-fix-left-first::after),
-  :global(.ant-table-wrapper .ant-table-fixed-column-gapped .ant-table-cell-fix-left-last::after),
-  :global(.ant-table-wrapper .ant-table-fixed-column-gapped .ant-table-cell-fix-right-first::after),
-  :global(.ant-table-wrapper .ant-table-fixed-column-gapped .ant-table-cell-fix-right-last::after) {
-    box-shadow: none !important;
-  }
-
-   :global(.ant-table-wrapper .ant-table-ping-left .ant-table-cell-fix-left-first::after),
-  :global(.ant-table-wrapper .ant-table-ping-left .ant-table-cell-fix-left-last::after) {
-    box-shadow: inset 10px 0 8px -8px var(--ant-color-split) !important;
-  }
-
-  .noBoxShadow
-    :global(
-      :where(.css-dev-only-do-not-override-143qgtt).ant-table-wrapper
-        .ant-table-container
-        table
-        > thead
-        > tr:first-child
-        > :last-child
-    ) {
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  }
-
-  :global(
-      .ant-table-tbody-virtual-scrollbar.ant-table-tbody-virtual-scrollbar-vertical
-    ) {
-    position: absolute;
-    width: 8px;
-    top: 0px;
-    bottom: 0px;
-    right: unset !important;
-    left: 0px;
-    visibility: visible !important;
-  }
-
   // Table header styles
   :global {
     .ant-table-thead > tr > th {
@@ -80,7 +43,7 @@
     .ant-table-thead > tr > th {
       background-color: #fff;
       color: var(--Normal-Text);
-      font-family: 'IranYekanBold';
+      font-family: 'PoppinsMedium500';
       font-size: 14px;
     }
 
@@ -102,7 +65,7 @@
       }
     }
 
-    .ant-table-cell-fix-left-first {
+    .ant-table-cell.ant-table-selection-column.ant-table-cell-fix-left.ant-table-cell-fix-left-last {
       background-color: #fff !important;
     }
 
@@ -112,6 +75,13 @@
         rgba(0, 114, 255, 0.05) 5.7%,
         rgba(0, 114, 255, 0) 93.2%
       ) !important;
+    }
+
+    .ant-table-wrapper
+      .ant-table-tbody
+      .ant-table-row.ant-table-row-selected
+      > .ant-table-cell {
+      background: unset;
     }
 
     .ant-table-tbody > tr {
@@ -138,19 +108,6 @@
       height: 7px;
     }
   }
-
-  :global(.ant-table-cell-fix-right) {
-    // box-shadow: 9px 0px 7px -1px rgba(145, 145, 145, 0.189);
-    // box-shadow: -2px 0 5px rgba(0, 0, 0, 0.05);
-  }
-
-  // .noBoxShadow :global(.ant-table-cell-fix-left) {
-  //   box-shadow: unset !important;
-  // }
-
-  // :global(.ant-table-cell-fix-left) {
-  //   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
-  // }
 }
 
 :global(.ant-table-wrapper .ant-table-cell-fix-right) {

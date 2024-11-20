@@ -1,71 +1,77 @@
 import { nanoid } from 'nanoid';
-import { ReportsGetResponse } from './types';
+import { ReportsGetRequest, ReportsGetResponse } from './types';
 
-const mock: Record<'transactions' | 'paymans', ReportsGetResponse> = {
-  transactions: {
-    result: [
-      {
-        id: nanoid(),
-        amount: Math.floor(Math.random() * 1_000 + 1),
-        title: 'مجموع مبلغ تراکنش‌های موفق',
-        updated_at: new Date().toISOString(),
-        alert: ''
-      },
-      {
-        id: nanoid(),
-        amount: Math.floor(Math.random() * 1_000 + 1),
-        title: 'تعداد تراکنش‌های موفق',
-        updated_at: new Date().toISOString(),
-        alert: ''
-      },
-      {
-        id: nanoid(),
-        amount: Math.floor(Math.random() * 1_000 + 1),
-        title: 'تعداد تراکنش‌های ناموفق (موجودی ناکافی)',
-        updated_at: new Date().toISOString(),
-        alert: 'تعداد تراکنش‌های ناموفق'
-      },
-      {
-        id: nanoid(),
-        amount: Math.floor(Math.random() * 1_000 + 1),
-        title: 'تعداد تراکنش‌های ناموفق (دلایل دیگر)',
-        updated_at: new Date().toISOString(),
-        alert: 'دلایل دیگر'
-      }
-    ]
+// Create generator functions for each report type
+const generateTransactionsData = (): ReportsGetResponse['result'] => [
+  {
+    id: nanoid(),
+    amount: Math.floor(Math.random() * 1_000 + 1),
+    title: 'Total Amount of Successful Transactions',
+    updated_at: new Date().toISOString(),
+    alert: ''
   },
-  paymans: {
-    result: [
-      {
-        id: nanoid(),
-        amount: Math.floor(Math.random() * 1_000 + 1),
-        title: 'تعداد پیمان های جدید',
-        updated_at: new Date().toISOString(),
-        alert: ''
-      },
-      {
-        id: nanoid(),
-        amount: Math.floor(Math.random() * 1_000 + 1),
-        title: 'تعداد پیمان های لغو شده',
-        updated_at: new Date().toISOString(),
-        alert: ''
-      },
-      {
-        id: nanoid(),
-        amount: Math.floor(Math.random() * 1_000 + 1),
-        title: 'تعداد پیمان های منقضی شده',
-        updated_at: new Date().toISOString(),
-        alert: ''
-      },
-      {
-        id: nanoid(),
-        amount: Math.floor(Math.random() * 1_000 + 1),
-        title: 'فروش بر پیمان',
-        updated_at: new Date().toISOString(),
-        alert: 'فروش بر پیمان'
-      }
-    ]
+  {
+    id: nanoid(),
+    amount: Math.floor(Math.random() * 1_000 + 1),
+    title: 'Number of Successful Transactions',
+    updated_at: new Date().toISOString(),
+    alert: ''
+  },
+  {
+    id: nanoid(),
+    amount: Math.floor(Math.random() * 1_000 + 1),
+    title: 'Number of Unsuccessful Transactions (Insufficient Balance)',
+    updated_at: new Date().toISOString(),
+    alert: 'Number of Unsuccessful Transactions'
+  },
+  {
+    id: nanoid(),
+    amount: Math.floor(Math.random() * 1_000 + 1),
+    title: 'Number of Unsuccessful Transactions (Other Reasons)',
+    updated_at: new Date().toISOString(),
+    alert: 'Other Reasons'
   }
-};
+];
 
-export default mock;
+const generatePaymansData = (): ReportsGetResponse['result'] => [
+  {
+    id: nanoid(),
+    amount: Math.floor(Math.random() * 1_000 + 1),
+    title: 'Number of New Contracts',
+    updated_at: new Date().toISOString(),
+    alert: ''
+  },
+  {
+    id: nanoid(),
+    amount: Math.floor(Math.random() * 1_000 + 1),
+    title: 'Number of Canceled Contracts',
+    updated_at: new Date().toISOString(),
+    alert: ''
+  },
+  {
+    id: nanoid(),
+    amount: Math.floor(Math.random() * 1_000 + 1),
+    title: 'Number of Expired Contracts',
+    updated_at: new Date().toISOString(),
+    alert: ''
+  },
+  {
+    id: nanoid(),
+    amount: Math.floor(Math.random() * 1_000 + 1),
+    title: 'Sales Per Contract',
+    updated_at: new Date().toISOString(),
+    alert: 'Sales Per Contract'
+  }
+];
+
+// Generate fresh data for each request
+const getMockData = (
+  reportType: ReportsGetRequest['pathParams']['report_type']
+): ReportsGetResponse => ({
+  result:
+    reportType === 'transactions'
+      ? generateTransactionsData()
+      : generatePaymansData()
+});
+
+export default getMockData;

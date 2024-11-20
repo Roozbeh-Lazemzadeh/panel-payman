@@ -50,41 +50,41 @@ const FilterSection: FC = () => {
       form={paymanReportForm}
       initialValues={initialValues}
     >
-      <Row gutter={[16, 16]} justify='start'>
+      <Row gutter={[16, 10]} justify='start'>
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='Debtor'>
             <DefaultInput
-              title='کاربر'
-              placeholder='لطفا نام٬شماره٬کد‌ملی کاربر مورد نظر را وارد کنید'
+              title='User'
+              placeholder='Please enter the name, number, or national ID of user.'
             />
           </Form.Item>
         </Col>
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='Banks'>
             <SelectInput
-              title='بانک'
+              title='Bank'
               search
               options={bankOptions}
-              placeholder='لطفا بانک مورد نظر خود را انتخاب کنید'
-              searchPlaceholder='نام بانک را جست‌و‌جو کنید.'
-              notFoundContent='بانکی یافت نشد'
+              placeholder='Please select your desired bank.'
+              searchPlaceholder='Search for the bank name.'
+              notFoundContent='No bank found.'
             />
           </Form.Item>
         </Col>
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='Umr'>
             <DefaultInput
-              title='شناسه پیمان'
-              placeholder='لطفا شناسه پیمان مورد نظر خود را وارد کنید.'
+              title='Mandate ID'
+              placeholder='Please enter the desired mandate ID.'
             />
           </Form.Item>
         </Col>
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='MandateStatus'>
             <SelectInput
-              title='وضعیت پیمان'
+              title='Mandate Status'
               options={paymanStatusOptions}
-              placeholder='لطفا وضعیت مورد نظر خود را انتخاب کنید.'
+              placeholder='Please select your desired status.'
               icon
             />
           </Form.Item>
@@ -92,19 +92,19 @@ const FilterSection: FC = () => {
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='TraceId'>
             <DefaultInput
-              title='شناسه پیگیری'
-              placeholder='لطفا شناسه پیگیری مورد نظر خود را وارد کنید.'
+              title='Tracking ID'
+              placeholder='Please enter the desired tracking ID.'
             />
           </Form.Item>
         </Col>
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='StartDate'>
-            <CalendarInput title='بازه تاریخ شروع پیمان' isMandate />
+            <CalendarInput title='Start Date Range for Mandate' isMandate />
           </Form.Item>
         </Col>
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='EndDate'>
-            <CalendarInput title='بازه تاریخ پایان پیمان' isMandate />
+            <CalendarInput title='End Date Range for Mandate' isMandate />
           </Form.Item>
         </Col>
         <Col
@@ -117,7 +117,7 @@ const FilterSection: FC = () => {
         >
           <AppButton modifier='primary' onClick={handleSubmitForm}>
             <TickSquare />
-            اعمال فیلتر
+            Apply Filters
           </AppButton>
         </Col>
       </Row>

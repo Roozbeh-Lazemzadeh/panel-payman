@@ -16,20 +16,20 @@ const TableSection: FC = () => {
   });
 
   const columnFilters = Object.keys({
-    'نام کاربر': '',
-    'کد ملی': '',
-    'شماره موبایل': '',
-    'بانک مبدا': '',
-    'بانک مقصد': '',
-    'وضعیت پیمان': '',
-    'وضعیت تراکنش': '',
-    'شناسه پیمان ها': '',
-    'سپرده/شبا': '',
-    'مبلغ تراکنش ها': 0,
-    'کدپیگیری بازپرداخت': '',
-    'ساعت تراکنش': '',
-    'تاریخ تراکنش': '',
-    توضیحات: ''
+    'User Name': '',
+    'National Code': '',
+    'Phone Number': '',
+    'Source Bank': '',
+    'Destination Bank': '',
+    'Mandate Status': '',
+    'Transaction Status': '',
+    'Mandate IDs': '',
+    'Deposit/IBAN': '',
+    'Transaction Amounts': 0,
+    'Refund Tracking Code': '',
+    'Transaction Time': '',
+    'Transaction Date': '',
+    Description: ''
   }).map((key) => ({
     value: key,
     label: key
@@ -38,7 +38,7 @@ const TableSection: FC = () => {
   const columns: TableColumnsType = [
     {
       width: 150,
-      title: 'نام کاربر',
+      title: 'User Name',
       dataIndex: 'Name',
       key: 'Name',
       sortDirections: ['ascend', 'descend', 'ascend'],
@@ -48,19 +48,19 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'کد ملی',
+      title: 'National Code',
       dataIndex: 'NationalCode',
       key: 'NationalCode'
     },
     {
       width: 150,
-      title: 'شماره موبایل',
+      title: 'Phone Number',
       dataIndex: 'PhoneNumber',
       key: 'PhoneNumber'
     },
     {
       width: 150,
-      title: 'بانک مبدا',
+      title: 'Source Bank',
       dataIndex: 'SourceBankName',
       key: 'SourceBankName',
       sortDirections: ['ascend', 'descend', 'ascend'],
@@ -72,8 +72,8 @@ const TableSection: FC = () => {
       }
     },
     {
-      width: 150,
-      title: 'بانک مقصد',
+      width: 180,
+      title: 'Destination Bank',
       dataIndex: 'DestinationBank',
       key: 'DestinationBank',
       sortDirections: ['ascend', 'descend', 'ascend'],
@@ -85,8 +85,8 @@ const TableSection: FC = () => {
       }
     },
     {
-      width: 150,
-      title: 'وضعیت پیمان',
+      width: 180,
+      title: 'Mandate Status',
       dataIndex: 'MandateStatus',
       key: 'MandateStatus',
       sortDirections: ['ascend', 'descend', 'ascend'],
@@ -94,13 +94,13 @@ const TableSection: FC = () => {
         let modifier = '';
 
         switch (record.MandateStatus) {
-          case 'موفق':
+          case 'Successful':
             modifier = 'green';
             break;
-          case 'ناموفق':
+          case 'Unsuccessful':
             modifier = 'red';
             break;
-          case 'درحال انجام':
+          case 'In Progress':
             modifier = 'yellow';
             break;
           default:
@@ -120,16 +120,16 @@ const TableSection: FC = () => {
       }
     },
     {
-      width: 150,
-      title: 'وضعیت تراکنش',
+      width: 190,
+      title: 'Transaction Status',
       dataIndex: 'Status',
       key: 'Status',
       sortDirections: ['ascend', 'descend', 'ascend'],
       render: (_, record) => {
         const modifier =
-          record.Status === 'موفق'
+          record.Status === 'Successful'
             ? 'green'
-            : record.Status === 'ناموفق'
+            : record.Status === 'Unsuccessful'
               ? 'red'
               : '';
 
@@ -141,19 +141,19 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'شناسه پیمان ها',
+      title: 'Mandate IDs',
       dataIndex: 'Umr',
       key: 'Umr'
     },
     {
       width: 150,
-      title: 'سپرده/شبا',
+      title: 'Deposit/IBAN',
       dataIndex: 'Deposit',
       key: 'Deposit'
     },
     {
-      width: 150,
-      title: 'مبلغ تراکنش ها',
+      width: 210,
+      title: 'Transaction Amounts',
       dataIndex: 'TransactionAmount',
       key: 'TransactionAmount',
       sorter: (a, b) =>
@@ -161,14 +161,14 @@ const TableSection: FC = () => {
       sortDirections: ['ascend', 'descend', 'ascend']
     },
     {
-      width: 150,
-      title: 'کدپیگیری بازپرداخت',
+      width: 190,
+      title: 'Refund Tracking Code',
       dataIndex: 'RefundId',
       key: 'RefundId'
     },
     {
-      width: 150,
-      title: 'ساعت تراکنش',
+      width: 180,
+      title: 'Transaction Time',
       dataIndex: 'TransactionTime',
       key: 'TransactionTime',
       sorter: (a, b) => {
@@ -178,8 +178,8 @@ const TableSection: FC = () => {
       }
     },
     {
-      width: 150,
-      title: 'تاریخ تراکنش',
+      width: 180,
+      title: 'Transaction Date',
       dataIndex: 'TransactionDate',
       key: 'TransactionDate',
       sorter: (a, b) => {
@@ -190,20 +190,21 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'توضیحات',
+      title: 'Description',
       dataIndex: 'Description',
       key: 'Description'
     }
   ];
+
   const actionsColumn = {
     width: 200,
-    title: 'دسترسی‌ها',
+    title: 'Actions',
     key: 'actions',
     fixed: 'right' as const,
     render: () => (
       <Space size='middle'>
-        <AppButton modifier='secondary'>جزئیات</AppButton>
-        <AppButton modifier='default'>استعلام</AppButton>
+        <AppButton modifier='secondary'>Details</AppButton>
+        <AppButton modifier='default'>Inquiry</AppButton>
       </Space>
     )
   };

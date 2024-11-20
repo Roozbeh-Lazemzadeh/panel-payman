@@ -16,12 +16,12 @@ const TableSection: FC = () => {
   });
 
   const columnFilters = Object.keys({
-    سرویس: '',
-    بانک: '',
-    وضعیت: '',
-    'زمان پاسخگویی (میلی ثانیه )': '',
-    تاریخ: '',
-    ساعت: ''
+    Service: '',
+    Bank: '',
+    Status: '',
+    'Response Time (Milliseconds)': '',
+    Date: '',
+    Time: ''
   }).map((key) => ({
     value: key,
     label: key
@@ -30,7 +30,7 @@ const TableSection: FC = () => {
   const columns: TableColumnsType = [
     {
       width: 150,
-      title: 'بانک',
+      title: 'Bank',
       dataIndex: 'BankTitle',
       key: 'BankTitle',
       sorter: (a, b) => {
@@ -43,7 +43,7 @@ const TableSection: FC = () => {
 
     {
       width: 150,
-      title: 'سرویس',
+      title: 'Service',
       dataIndex: 'Service',
       key: 'Service',
       sorter: (a, b) => {
@@ -53,17 +53,18 @@ const TableSection: FC = () => {
 
     {
       width: 150,
-      title: 'وضعیت',
+      title: 'Status',
       dataIndex: 'IsSucceed',
       key: 'IsSucceed',
       render: (_, record) => {
         const modifier = record.IsSucceed ? 'green' : 'red';
-        const text = record.IsSucceed ? 'موفق' : 'ناموفق';
+        const text = record.IsSucceed ? 'Successful' : 'Unsuccessful';
 
         return <CustomTag modifier={modifier}>{text}</CustomTag>;
       },
       sorter: (a, b) => {
-        const getText = (isSucceed: boolean) => (isSucceed ? 'موفق' : 'ناموفق');
+        const getText = (isSucceed: boolean) =>
+          isSucceed ? 'Successful' : 'Unsuccessful';
         const textA = getText(a.IsSucceed);
         const textB = getText(b.IsSucceed);
 
@@ -73,7 +74,7 @@ const TableSection: FC = () => {
 
     {
       width: 160,
-      title: 'زمان پاسخگویی (میلی ثانیه )',
+      title: 'Response Time (Milliseconds)',
       dataIndex: 'ProcessTime',
       key: 'ProcessTime',
       sorter: (a, b) => {
@@ -86,7 +87,7 @@ const TableSection: FC = () => {
 
     {
       width: 150,
-      title: 'ساعت',
+      title: 'Time',
       dataIndex: 'RequestTime',
       key: 'RequestTime',
       sorter: (a, b) => {
@@ -98,7 +99,7 @@ const TableSection: FC = () => {
 
     {
       width: 150,
-      title: 'تاریخ',
+      title: 'Date',
       dataIndex: 'RequestDate',
       key: 'RequestDate',
       sorter: (a, b) => {
@@ -109,13 +110,13 @@ const TableSection: FC = () => {
     }
   ];
   const actionsColumn = {
-    width: 100,
-    title: 'دسترسی‌ها',
+    width: 140,
+    title: 'Actions',
     key: 'actions',
     fixed: 'right' as const,
     render: () => (
       <Space size='middle'>
-        <AppButton modifier='secondary'>جزئیات</AppButton>
+        <AppButton modifier='secondary'>Details</AppButton>
       </Space>
     )
   };

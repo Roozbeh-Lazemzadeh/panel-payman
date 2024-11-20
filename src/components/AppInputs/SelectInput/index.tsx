@@ -44,8 +44,6 @@ const SelectInput: FC<Props> = ({
   const [searchValue, setSearchValue] = useState('');
   const [selectedValues, setSelectedValues] = useState<string[]>([]);
 
-  console.log(options[2].icon);
-
   const handleChange = (newValue: string[] | string) => {
     const newValues = Array.isArray(newValue) ? newValue : [newValue];
 
@@ -61,10 +59,7 @@ const SelectInput: FC<Props> = ({
           onChange(newValues);
         }
       } else {
-        showNotifyToast(
-          'حداکثر 3 مورد را می‌توانید انتخاب کنید.',
-          <InfoIcon />
-        );
+        showNotifyToast('You can select up to 3 items.', <InfoIcon />);
       }
     }
   };
@@ -96,6 +91,11 @@ const SelectInput: FC<Props> = ({
           value={searchValue}
           onChange={(e) => handleSearch(e.target.value)}
           className={styles['select-render-list__search']}
+          onKeyDown={(e) => {
+            if (e.key === 'Backspace') {
+              e.stopPropagation();
+            }
+          }}
         />
       )}
       <div className={styles['select-render-list__options']}>{menu}</div>
@@ -111,6 +111,47 @@ const SelectInput: FC<Props> = ({
     </div>
   );
 
+  const renderMultipleTagLabel = (option: {
+    label: { props: { children: string } };
+  }) => {
+    const value = option.label.props.children;
+    const displayValue = value.length > 11 ? `${value.slice(0, 11)}...` : value;
+
+    return (
+      <div title={value.length > 11 ? value : undefined}>{displayValue}</div>
+    );
+  };
+
+  const selectValue = useMemo(() => {
+    if (selectedValues.length === 0) return undefined;
+
+    if (singleSelect) {
+      const selectedOption = options.find(
+        (opt) => opt.value === selectedValues[0]
+      );
+      return selectedOption
+        ? {
+            value: selectedOption.value,
+            label: renderOptionLabel(selectedOption)
+          }
+        : undefined;
+    }
+
+    return selectedValues
+      .map((val) => {
+        const option = options.find((opt) => opt.value === val);
+        return option
+          ? {
+              value: option.value,
+              label: renderMultipleTagLabel({
+                label: { props: { children: option.value } }
+              })
+            }
+          : undefined;
+      })
+      .filter(Boolean);
+  }, [selectedValues, singleSelect, options]);
+
   return (
     <>
       {isOpen && (
@@ -125,7 +166,13 @@ const SelectInput: FC<Props> = ({
           maxTagCount={5}
           maxTagTextLength={11}
           labelInValue
-          suffixIcon={isOpen ? <SelectArrow2 /> : <SelectArrow />}
+          suffixIcon={
+            isOpen ? (
+              <SelectArrow2 />
+            ) : (
+              <SelectArrow style={{ transform: 'rotate(180deg)' }} />
+            )
+          }
           options={filteredOptions.map((option) => ({
             key: option.key,
             value: option.value,
@@ -139,15 +186,13 @@ const SelectInput: FC<Props> = ({
           filterOption={false}
           onChange={(values) => {
             const selectedValues = Array.isArray(values)
-              ? values.map((item) => item.value)
+              ? values
+                  .filter((item) => item !== undefined)
+                  .map((item) => item.value)
               : [values.value];
             handleChange(selectedValues);
           }}
-          value={
-            singleSelect
-              ? { value: selectedValues[0], label: selectedValues[0] }
-              : selectedValues.map((val) => ({ value: val, label: val }))
-          }
+          value={selectValue}
         />
       </div>
     </>

@@ -1,6 +1,4 @@
 import { useRef, useState, type FC } from 'react';
-import persian from 'react-date-object/calendars/persian';
-import persian_fa from 'react-date-object/locales/persian_fa';
 import DatePicker, { DateObject, DatePickerRef } from 'react-multi-date-picker';
 import Calendar from 'assets/Icons/Calendar';
 import styles from './styles.module.scss';
@@ -9,11 +7,7 @@ import TimePicker from 'react-multi-date-picker/plugins/time_picker';
 import CloseSquare from 'assets/Icons/CloseSquare';
 import { showNotifyToast } from 'components/AppToast';
 import InfoIcon from 'assets/Icons/InfoIcon';
-import {
-  IsAfterStartingDate,
-  convertFromPersianDisplay,
-  convertToPersianDisplay
-} from './utils';
+import { IsAfterStartingDate } from './utils';
 
 type Props = {
   title: string;
@@ -33,22 +27,21 @@ const CalendarInput: FC<Props> = ({
   const datePickerToRef = useRef<DatePickerRef>(null);
   const [fromDate, setFromDate] = useState<DateObject | null>(null);
   const [toDate, setToDate] = useState<DateObject | null>(null);
-  const [fromDateDisplay, setFromDateDisplay] = useState('');
-  const [toDateDisplay, setToDateDisplay] = useState('');
+  const [fromDateDisplay, setFromDateDisplay] = useState<string>('');
+  const [toDateDisplay, setToDateDisplay] = useState<string>('');
 
   const today = new Date();
 
   const handleFromDateChange = (selectedDate: DateObject) => {
     if (!toDate || (toDate && IsAfterStartingDate(toDate, selectedDate))) {
       setFromDate(selectedDate);
-      setFromDateDisplay(convertToPersianDisplay(selectedDate));
-
+      setFromDateDisplay(selectedDate.format('YYYY-MM-DD HH:mm'));
       if (onChange) {
         onChange([selectedDate, toDate || '']);
       }
     } else {
       showNotifyToast(
-        'تاریخ پایان، نمی‌تواند قبل از تاریخ شروع باشد.',
+        'The end date cannot be before the start date.',
         <InfoIcon />
       );
     }
@@ -60,13 +53,13 @@ const CalendarInput: FC<Props> = ({
       (fromDate && IsAfterStartingDate(selectedDate, fromDate))
     ) {
       setToDate(selectedDate);
-      setToDateDisplay(convertToPersianDisplay(selectedDate));
+      setToDateDisplay(selectedDate.format('YYYY-MM-DD HH:mm'));
       if (onChange) {
         onChange([fromDate || '', selectedDate]);
       }
     } else {
       showNotifyToast(
-        'تاریخ پایان، نمی‌تواند قبل از تاریخ شروع باشد.',
+        'The end date cannot be before the start date.',
         <InfoIcon />
       );
     }
@@ -97,34 +90,29 @@ const CalendarInput: FC<Props> = ({
         {/* From Date Picker */}
         <DatePicker
           ref={datePickerFromRef}
-          style={{
-            direction: 'rtl'
-          }}
           numberOfMonths={2}
-          value={convertFromPersianDisplay(fromDateDisplay)}
+          value={fromDate}
           onChange={handleFromDateChange}
-          locale={persian_fa}
-          calendar={persian}
           calendarPosition='top-center'
           monthYearSeparator='  '
           className='rmdp-mobile'
           mobileLabels={{
-            CANCEL: 'انصراف',
-            OK: 'تایید'
+            CANCEL: 'Cancel',
+            OK: 'Confirm'
           }}
-          plugins={[<TimePicker position='bottom' />]}
+          plugins={[<TimePicker position='bottom' />]} // Enables time selection
           maxDate={isMandate ? undefined : today}
         />
         <span
-          className={`${styles['calendar-input__date-label']} ${styles['calendar-input__date-label--from']} ${fromDateDisplay !== '' ? styles['calendar-input__date-label--filled'] : ''}`}
+          className={`${styles['calendar-input__date-label']} ${styles['calendar-input__date-label--from']} ${fromDateDisplay ? styles['calendar-input__date-label--filled'] : ''}`}
           onClick={() => datePickerFromRef.current?.openCalendar()}
         >
-          {fromDateDisplay !== '' ? fromDateDisplay : 'از تاریخ'}
+          {fromDateDisplay || 'From Date'}
         </span>
         <div
           className={`${styles['calendar-input__icon']} ${styles['calendar-input__icon--from']}`}
         >
-          {fromDateDisplay !== '' ? (
+          {fromDateDisplay ? (
             <CloseSquare onClick={clearFromDate} />
           ) : (
             <Calendar
@@ -133,40 +121,35 @@ const CalendarInput: FC<Props> = ({
           )}
         </div>
 
-        {/* divider line  */}
+        {/* Divider line */}
         <div className={styles['calendar-input__divider']}></div>
 
         {/* To Date Picker */}
         <DatePicker
           ref={datePickerToRef}
-          style={{
-            direction: 'rtl'
-          }}
           numberOfMonths={2}
-          value={convertFromPersianDisplay(toDateDisplay)}
+          value={toDate}
           onChange={handleToDateChange}
-          locale={persian_fa}
-          calendar={persian}
           calendarPosition='top-center'
           monthYearSeparator='  '
           className='rmdp-mobile'
           mobileLabels={{
-            OK: 'تایید',
-            CANCEL: 'انصراف'
+            OK: 'Confirm',
+            CANCEL: 'Cancel'
           }}
-          plugins={[<TimePicker position='bottom' />]}
+          plugins={[<TimePicker position='bottom' />]} // Enables time selection
           maxDate={isMandate ? undefined : today}
         />
         <span
-          className={`${styles['calendar-input__date-label']} ${styles['calendar-input__date-label--to']} ${toDateDisplay !== '' ? styles['calendar-input__date-label--filled'] : ''}`}
+          className={`${styles['calendar-input__date-label']} ${styles['calendar-input__date-label--to']} ${toDateDisplay ? styles['calendar-input__date-label--filled'] : ''}`}
           onClick={() => datePickerToRef.current?.openCalendar()}
         >
-          {toDateDisplay !== '' ? toDateDisplay : 'تا تاریخ'}
+          {toDateDisplay || 'To Date'}
         </span>
         <div
           className={`${styles['calendar-input__icon']} ${styles['calendar-input__icon--to']}`}
         >
-          {toDateDisplay !== '' ? (
+          {toDateDisplay ? (
             <CloseSquare onClick={clearToDate} />
           ) : (
             <Calendar onClick={() => datePickerToRef.current?.openCalendar()} />

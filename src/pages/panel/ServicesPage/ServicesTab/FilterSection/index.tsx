@@ -49,13 +49,13 @@ const FilterSection: FC = () => {
       form={serviceReportForm}
       initialValues={initialValues}
     >
-      <Row gutter={[16, 16]} justify='start'>
+      <Row gutter={[16, 10]} justify='start'>
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='Service'>
             <SelectInput
-              title='سرویس'
+              title='Service'
               options={serviceOptions}
-              placeholder='لطفا سرویس مورد نظر خود را انتخاب کنید.'
+              placeholder='Please select your desired service.'
             />
           </Form.Item>
         </Col>
@@ -63,12 +63,12 @@ const FilterSection: FC = () => {
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='Banks'>
             <SelectInput
-              title='بانک'
+              title='Bank'
               search
               options={bankOptions}
-              placeholder='لطفا بانک مورد نظر خود را انتخاب کنید'
-              searchPlaceholder='نام بانک را جست‌و‌جو کنید.'
-              notFoundContent='بانکی یافت نشد'
+              placeholder='Please select your desired bank'
+              searchPlaceholder='Search for the bank name.'
+              notFoundContent='No bank found'
             />
           </Form.Item>
         </Col>
@@ -76,9 +76,9 @@ const FilterSection: FC = () => {
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='Status'>
             <SelectInput
-              title='وضعیت'
+              title='Status'
               options={serviceStatusOptions}
-              placeholder='لطفا وضعیت مورد نظر خود را انتخاب کنید.'
+              placeholder='Please select your desired status.'
               icon
             />
           </Form.Item>
@@ -86,7 +86,7 @@ const FilterSection: FC = () => {
 
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='Date'>
-            <CalendarInput title='بازه تاریخی' isMandate={false} />
+            <CalendarInput title='Date Range' isMandate={false} />
           </Form.Item>
         </Col>
 
@@ -100,7 +100,7 @@ const FilterSection: FC = () => {
         >
           <AppButton modifier='primary' onClick={handleSubmitForm}>
             <TickSquare />
-            اعمال فیلتر
+            Apply Filters
           </AppButton>
         </Col>
       </Row>

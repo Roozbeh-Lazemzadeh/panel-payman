@@ -1,4 +1,9 @@
-const SelectArrow = () => {
+import { FC } from 'react';
+
+type Props = {
+  style?: { transform: string };
+};
+const SelectArrow: FC<Props> = ({ style }) => {
   return (
     <svg
       width='7'
@@ -6,6 +11,7 @@ const SelectArrow = () => {
       viewBox='0 0 7 11'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
+      style={style}
     >
       <path
         d='M5.5 10L2.41421 6.91421C1.63316 6.13316 1.63316 4.86683 2.41421 4.08579L5.5 1'

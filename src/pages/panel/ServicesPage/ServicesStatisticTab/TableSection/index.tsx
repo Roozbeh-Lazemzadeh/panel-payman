@@ -13,11 +13,11 @@ const TableSection: FC = () => {
   });
 
   const columnFilters = Object.keys({
-    بانک: '',
-    سرویس: '',
-    'تعداد موفق': '',
-    'تعداد ناموفق': '',
-    'تعداد کل': ''
+    Bank: '',
+    Service: '',
+    'Succeeded Count': '',
+    'Failed Count': '',
+    'Total Count': ''
   }).map((key) => ({
     value: key,
     label: key
@@ -26,7 +26,7 @@ const TableSection: FC = () => {
   const columns: TableColumnsType = [
     {
       width: 150,
-      title: 'بانک',
+      title: 'Bank',
       dataIndex: 'BankTitle',
       key: 'BankTitle',
       sorter: (a, b) => {
@@ -39,7 +39,7 @@ const TableSection: FC = () => {
 
     {
       width: 150,
-      title: 'سرویس',
+      title: 'Service',
       dataIndex: 'Service',
       key: 'Service',
       sorter: (a, b) => {
@@ -49,7 +49,7 @@ const TableSection: FC = () => {
 
     {
       width: 150,
-      title: 'تعداد موفق',
+      title: 'Succeeded Count',
       dataIndex: 'SucceededCount',
       key: 'SucceededCount',
       sorter: (a, b) => {
@@ -58,7 +58,7 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'تعداد ناموفق',
+      title: 'Failed Count',
       dataIndex: 'FailedCount',
       key: 'FailedCount',
       sorter: (a, b) => {
@@ -67,7 +67,7 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'تعداد کل',
+      title: 'Total Count',
       dataIndex: 'TotalCount',
       key: 'TotalCount',
       sorter: (a, b) => {
@@ -76,7 +76,6 @@ const TableSection: FC = () => {
     }
   ];
 
-  // Filter the columns based on the selected columns
   const filteredColumns = columns.filter((column) => {
     return selectedColumns.includes(column.title as string);
   });

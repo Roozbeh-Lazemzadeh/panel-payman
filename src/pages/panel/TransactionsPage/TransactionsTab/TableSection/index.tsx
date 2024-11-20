@@ -17,17 +17,17 @@ const TableSection: FC = () => {
   });
 
   const columnFilters = Object.keys({
-    'نام کاربر': '',
-    'کد ملی': '',
-    'شماره موبایل': '',
-    بانک: '',
-    'وضعیت تراکنش': '',
-    'شناسه پیمان': '',
-    'شناسه مرجع': '',
-    'مبلغ تراکنش': 0,
-    'شناسه پیگیری پرداخت': '',
-    'ساعت تراکنش': '',
-    'تاریخ تراکنش': ''
+    'User Name': '',
+    'National ID': '',
+    'Mobile Number': '',
+    Bank: '',
+    'Transaction Status': '',
+    'Contract ID': '',
+    'Reference ID': '',
+    'Transaction Amount': 0,
+    'Payment Tracking ID': '',
+    'Transaction Time': '',
+    'Transaction Date': ''
   }).map((key) => ({
     value: key,
     label: key
@@ -36,7 +36,7 @@ const TableSection: FC = () => {
   const columns: TableColumnsType = [
     {
       width: 150,
-      title: 'نام کاربر',
+      title: 'User Name',
       dataIndex: 'Name',
       key: 'Name',
       sortDirections: ['ascend', 'descend', 'ascend'],
@@ -46,19 +46,19 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'کد ملی',
+      title: 'National ID',
       dataIndex: 'NationalCode',
       key: 'NationalCode'
     },
     {
       width: 150,
-      title: 'شماره موبایل',
+      title: 'Mobile Number',
       dataIndex: 'PhoneNumber',
       key: 'PhoneNumber'
     },
     {
       width: 150,
-      title: 'بانک',
+      title: 'Bank',
       dataIndex: 'SourceBankName',
       key: 'SourceBankName',
       sortDirections: ['ascend', 'descend', 'ascend'],
@@ -70,16 +70,16 @@ const TableSection: FC = () => {
       }
     },
     {
-      width: 150,
-      title: 'وضعیت تراکنش',
+      width: 190,
+      title: 'Transaction Status',
       dataIndex: 'Status',
       key: 'Status',
       sortDirections: ['ascend', 'descend', 'ascend'],
       render: (_, record) => {
         const modifier =
-          record.Status === 'موفق'
+          record.Status === 'Successful'
             ? 'green'
-            : record.Status === 'ناموفق'
+            : record.Status === 'Unsuccessful'
               ? 'red'
               : '';
 
@@ -91,19 +91,19 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'شناسه پیمان',
+      title: 'Contract ID',
       dataIndex: 'Umr',
       key: 'Umr'
     },
     {
       width: 150,
-      title: 'شناسه مرجع',
+      title: 'Reference ID',
       dataIndex: 'ReferenceId',
       key: 'ReferenceId'
     },
     {
-      width: 150,
-      title: 'مبلغ تراکنش',
+      width: 200,
+      title: 'Transaction Amount',
       dataIndex: 'TransactionAmount',
       key: 'TransactionAmount',
       sorter: (a, b) =>
@@ -112,13 +112,13 @@ const TableSection: FC = () => {
     },
     {
       width: 200,
-      title: 'شناسه پیگیری پرداخت',
+      title: 'Payment Tracking ID',
       dataIndex: 'TraceId',
       key: 'TraceId'
     },
     {
-      width: 150,
-      title: 'ساعت تراکنش',
+      width: 180,
+      title: 'Transaction Time',
       dataIndex: 'TransactionTime',
       key: 'TransactionTime',
       sorter: (a, b) => {
@@ -128,8 +128,8 @@ const TableSection: FC = () => {
       }
     },
     {
-      width: 150,
-      title: 'تاریخ تراکنش',
+      width: 170,
+      title: 'Transaction Date',
       dataIndex: 'TransactionDate',
       key: 'TransactionDate',
       sorter: (a, b) => {
@@ -141,16 +141,14 @@ const TableSection: FC = () => {
   ];
   const actionsColumn = {
     width: 200,
-    title: 'دسترسی‌ها',
+    title: 'Actions',
     key: 'actions',
     fixed: 'right' as const,
     render: () => (
       <div className={styles['transaction-actionsColumn']}>
         <Space size='middle'>
-          <AppButton modifier='secondary'>جزئیات</AppButton>
-          <AppButton modifier='default'>استعلام</AppButton>
-          {/* <Typography.Link>Action1</Typography.Link>
-          <Typography.Link>Action2</Typography.Link> */}
+          <AppButton modifier='secondary'>Details</AppButton>
+          <AppButton modifier='default'>Inquiry</AppButton>
         </Space>
       </div>
     )

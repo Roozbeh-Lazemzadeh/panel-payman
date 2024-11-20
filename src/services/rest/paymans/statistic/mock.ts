@@ -3,12 +3,12 @@ import { PaymansStatisticGetResponse } from './types';
 const mock: PaymansStatisticGetResponse = {
   result: Array.from({ length: 110 }, (_, i) => ({
     Id: (i + 1).toString(),
-    SourceBankName: ['ملی', 'صادرات', 'ملت', 'تجارت'][
+    SourceBankName: ['Melli', 'Saderat', 'Mellat', 'Tejarat'][
       Math.floor(Math.random() * 4)
     ],
-    PaymanStartDate: `1402/${Math.floor(1 + Math.random() * 11)
+    PaymanStartDate: `2023/${Math.floor(1 + Math.random() * 12)
       .toString()
-      .padStart(2, '0')}/${Math.floor(1 + Math.random() * 29)
+      .padStart(2, '0')}/${Math.floor(1 + Math.random() * 28)
       .toString()
       .padStart(2, '0')}`,
     TotalCount: String(100 + Math.floor(Math.random() * 900)),

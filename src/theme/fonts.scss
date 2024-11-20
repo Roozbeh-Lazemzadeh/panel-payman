@@ -1,11 +1,9 @@
 @font-face {
   font-family: 'IranYekanBold';
-  font-family: 'IranYekanBold';
   src: url('/assets/fonts/IRANYekanXFaNum-DemiBold.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'IranYekanExtraBold';
   font-family: 'IranYekanExtraBold';
   src: url('/assets/fonts/IRANYekanXFaNum-ExtraBold.ttf') format('truetype');
 }
@@ -17,6 +15,25 @@
 
 @font-face {
   font-family: 'IranYekanRegular';
-  font-family: 'IranYekanRegular';
   src: url('/assets/fonts/IRANYekanXFaNum-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PoppinsRegular400';
+  src: url('/assets/fonts/PoppinsRegular400.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PoppinsMedium500';
+  src: url('/assets/fonts/PoppinsMedium500.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PoppinsSemiBold600';
+  src: url('/assets/fonts/PoppinsSemiBold600.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PoppinsBold700';
+  src: url('/assets/fonts/PoppinsBold700.ttf') format('truetype');
 }

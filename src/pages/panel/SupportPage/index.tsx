@@ -6,14 +6,14 @@ const SupportPage: FC = () => {
   return (
     <>
       <AppBanner
-        title='پشتیبانی فنی سیستم'
-        description='در اینجا شما میتوانید راه های ارتباطی مورد نیاز برای سوال و یا مشکلات پیش آمده در پنل یا دسترسی خود با کارشناسان ما درمیان بگذارید.'
+        title='Technical System Support'
+        description='Here you can find the contact methods needed to ask questions or share any issues you encounter with the panel or your access with our experts.'
       />
       <div className={styles['support-wrapper']}>
-        <h1 className={styles['support-wrapper__title']}>شماره های تماس </h1>
+        <h1 className={styles['support-wrapper__title']}>Contact Numbers</h1>
         <div className={styles['support-wrapper__item']}>
           <div className={styles['support-wrapper__item-title']}>
-            پشتیبانی پنل
+            Panel Support
           </div>
           <div className={styles['support-wrapper__item-value']}>
             02191691499 | 02191691499
@@ -21,7 +21,7 @@ const SupportPage: FC = () => {
         </div>
         <div className={styles['support-wrapper__item']}>
           <div className={styles['support-wrapper__item-title']}>
-            پشتیبانی فنی
+            Technical Support
           </div>
           <div className={styles['support-wrapper__item-value']}>
             02191691499
@@ -29,7 +29,7 @@ const SupportPage: FC = () => {
         </div>
         <div className={styles['support-wrapper__item']}>
           <div className={styles['support-wrapper__item-title']}>
-            توسعه کسب و کار و قرارداد
+            Business Development and Contracts
           </div>
           <div className={styles['support-wrapper__item-value']}>
             02191691499

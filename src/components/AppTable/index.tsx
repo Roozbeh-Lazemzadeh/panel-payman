@@ -6,6 +6,7 @@ import styles from './styles.module.scss';
 import TableOptions from './TableOptions';
 import { selectedCountAtom } from 'store/table-atoms';
 import { useAtom } from 'jotai';
+import { calculateReduction } from './helpers';
 
 type CustomTableProps = {
   data: object[];
@@ -47,8 +48,10 @@ const CustomTable: React.FC<CustomTableProps> = ({
     if (tableRef.current) {
       const windowHeight = window.innerHeight;
       const tableTop = tableRef.current.getBoundingClientRect().top;
-      const newScrollY = windowHeight - tableTop - 140;
-      setScrollY(Math.max(newScrollY, 65));
+      const reduction = calculateReduction(tableTop, windowHeight);
+      const newScrollY = windowHeight - tableTop - reduction;
+      const alternativeScrollY = newScrollY < 40 ? 25 : 55;
+      setScrollY(Math.max(newScrollY, alternativeScrollY));
     }
   }, []);
 

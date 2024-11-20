@@ -51,7 +51,7 @@ const CheckOTPForm: FC<CheckOTPFormProps> = ({ setStep }) => {
   const handleErrorForLength = () => {
     if (otp.length === 6) {
       showErrorToast(
-        'کد ۶ رقمی واردشده متفاوت است. توجه کنید که کد وارد شده با کد ارسال شده یکسان باشد.',
+        'The entered 6-digit code is incorrect. Please ensure the entered code matches the sent code.',
         <DangerTriangle />
       );
     }
@@ -68,13 +68,15 @@ const CheckOTPForm: FC<CheckOTPFormProps> = ({ setStep }) => {
     <div className={styles['check-wrapper']}>
       <div className={styles['check-wrapper']}>
         <p className={styles['login-header_paragraph']}>
-          به پنل پیمان خوش‌آمدید
+          Welcome to Payman Panel
         </p>
-        <p className={styles['login-header_span']}>پرداخت٬ این بار لذت بخش</p>
+        <p className={styles['login-header_span']}>
+          Payment, this time enjoyable
+        </p>
         <p className={styles['login-header_alert']}>
-          کاربر گرامی لطفا کد ۶ رقمی پیامک‌شده را وارد کنید.
+          Dear user, please enter the 6-digit code sent via SMS
         </p>
-        <p className={styles['login-header_number']}>۰۹۳۷۱۱۰۹۲۲۷</p>
+        <p className={styles['login-header_number']}>09371109227</p>
       </div>
       <form className={styles['check-wrapper_form']}>
         <OTPInput
@@ -101,7 +103,7 @@ const CheckOTPForm: FC<CheckOTPFormProps> = ({ setStep }) => {
           onClick={handleLogin}
           disabled={otp.length !== 6}
         >
-          ورود به پنل
+          Login to Panel
         </Button>
         <Button
           className={styles['login-return_btn']}
@@ -114,16 +116,16 @@ const CheckOTPForm: FC<CheckOTPFormProps> = ({ setStep }) => {
             src='/assets/images/login/Swap.svg'
             alt=''
           />
-          تغییر شماره موبایل یا نام کاربری
+          Change Mobile Number or Username
         </Button>
       </form>
       <p className={styles['check-timer']}>
         {time.minutes === 0 && time.seconds === 0 ? (
           <span className={styles['check-timer_end']} onClick={resetTimer}>
-            ارسال مجدد کد
+            Resend Code
           </span>
         ) : (
-          `${formattedTime} ثانیه باقی مانده`
+          `${formattedTime} remaining`
         )}
       </p>
     </div>

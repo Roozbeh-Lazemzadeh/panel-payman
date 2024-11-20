@@ -2,7 +2,7 @@ import { FC } from 'react';
 import type { CollapseProps } from 'antd';
 import { Collapse } from 'antd';
 import ArrowLeft3 from 'assets/Icons/ArrowLeft3';
-import styles from './styles.module.scss'; // Import the SCSS module
+import styles from './styles.module.scss';
 
 type CollapseItem = {
   label: string;
@@ -18,19 +18,19 @@ const AppCollapse: FC<CustomCollapseProps> = ({ list }) => {
   const items: CollapseProps['items'] = list.map((item) => ({
     key: item.key,
     label: item.label,
-    children: <span>{item.text}</span>
+    children: <span>{item.text}</span>,
+    className: styles['ant-collapse-item']
   }));
 
   return (
     <Collapse
       ghost
       accordion
-      className={styles['ant-collapse']} // Apply the SCSS styles
-      style={{ background: '#fff' }}
+      className={styles['ant-collapse']}
       items={items}
       expandIcon={({ isActive }) => (
         <ArrowLeft3
-          style={{ transform: isActive ? 'rotate(-90deg)' : 'rotate(0)' }}
+          style={{ transform: isActive ? 'rotate(-90deg)' : 'rotate(180deg)' }}
         />
       )}
     />

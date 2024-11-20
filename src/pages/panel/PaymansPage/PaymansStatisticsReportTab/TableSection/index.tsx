@@ -14,16 +14,16 @@ const TableSection: FC = () => {
   });
 
   const columnFilters = Object.keys({
-    بانک: '',
-    'تاریخ شروع پیمان': '',
-    'کل پیمان': '',
-    'پیمان‌های درحال ایجاد': '',
-    'پیمان‌های در انتظار تایید': '',
-    'پیمان‌های فعال': '',
-    'پیمان‌های لغو شده': '',
-    'پیمان‌های غیر فعال': '',
-    'پیمان‌های منقضی شده': '',
-    نامشخص: ''
+    Bank: '',
+    'Payman Start Date': '',
+    'Total Paymans': '',
+    'Creating Paymans': '',
+    'Awaiting Confirmation Paymans': '',
+    'Active Paymans': '',
+    'Canceled Paymans': '',
+    'Inactive Paymans': '',
+    'Expired Paymans': '',
+    Unknown: ''
   }).map((key) => ({
     value: key,
     label: key
@@ -32,7 +32,7 @@ const TableSection: FC = () => {
   const columns: TableColumnsType = [
     {
       width: 150,
-      title: 'بانک',
+      title: 'Bank',
       dataIndex: 'SourceBankName',
       key: 'SourceBankName',
       sorter: (a, b) => {
@@ -44,7 +44,7 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'تاریخ شروع پیمان',
+      title: 'Payman Start Date',
       dataIndex: 'PaymanStartDate',
       key: 'PaymanStartDate',
       sorter: (a, b) => {
@@ -55,22 +55,22 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'کل پیمان',
+      title: 'Total Paymans',
       dataIndex: 'TotalCount',
       key: 'TotalCount',
       sorter: (a, b) => (a.TotalCount as number) - (b.TotalCount as number)
     },
     {
       width: 180,
-      title: 'پیمان‌های درحال ایجاد',
+      title: 'Creating Paymans',
       dataIndex: 'CreatingPaymans',
       key: 'CreatingPaymans',
       sorter: (a, b) =>
         (a.CreatingPaymans as number) - (b.CreatingPaymans as number)
     },
     {
-      width: 180,
-      title: 'پیمان‌های در انتظار تایید',
+      width: 210,
+      title: 'Awaiting Confirmation Paymans',
       dataIndex: 'AwaitingConfirmPaymans',
       key: 'AwaitingConfirmPaymans',
       sorter: (a, b) =>
@@ -79,7 +79,7 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'پیمان‌های فعال',
+      title: 'Active Paymans',
       dataIndex: 'ActivePaymans',
       key: 'ActivePaymans',
       sorter: (a, b) =>
@@ -87,7 +87,7 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'پیمان‌های لغو شده',
+      title: 'Canceled Paymans',
       dataIndex: 'CanceledPaymans',
       key: 'CanceledPaymans',
       sorter: (a, b) =>
@@ -95,7 +95,7 @@ const TableSection: FC = () => {
     },
     {
       width: 150,
-      title: 'پیمان‌های غیر فعال',
+      title: 'Inactive Paymans',
       dataIndex: 'InactivePaymans',
       key: 'InactivePaymans',
       sorter: (a, b) =>
@@ -103,7 +103,7 @@ const TableSection: FC = () => {
     },
     {
       width: 180,
-      title: 'پیمان‌های منقضی شده',
+      title: 'Expired Paymans',
       dataIndex: 'ExpiredPaymans',
       key: 'ExpiredPaymans',
       sorter: (a, b) =>

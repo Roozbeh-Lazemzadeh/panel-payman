@@ -21,14 +21,14 @@ const SidebarFooter: React.FC<SidebarFooterProps> = ({ sidebarOpen }) => {
     <CustomTooltip
       sidebarOpen={sidebarOpen}
       align={{ offset: [8, 0] }}
-      title='خروج از حساب کاربری'
+      title='logout'
     >
       <div className={styles.logout} onClick={logoOutClickHandler}>
         <img src='/assets/pics/Logout.svg' alt='logout' />
         <span
           className={`${styles['exit-text']} ${!sidebarOpen ? styles.hidden : ''}`}
         >
-          خروج از حساب کاربری
+          logout
         </span>
       </div>
     </CustomTooltip>

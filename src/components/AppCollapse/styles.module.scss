@@ -1,6 +1,6 @@
 .ant-collapse-content {
   border-top: unset;
-  direction: rtl;
+  direction: ltr;
   :global(&.ant-collapse-content-active) {
     border-top: unset;
   }
@@ -8,12 +8,15 @@
 
 :global(.ant-collapse) {
   margin-top: 1.5rem !important;
+  max-height: 600px;
+  overflow-y: auto;
   :global(.ant-collapse-item) {
-    direction: rtl;
+    background-color: #fff;
+    direction: ltr;
     border: 1px solid #cdcdd0 !important;
     margin-bottom: 2.5rem;
     border-radius: 0.8rem !important;
-    padding: 0.7rem 0 !important;
+    padding: 1rem !important;
 
     :global(.ant-collapse-header) {
       flex-direction: row-reverse;

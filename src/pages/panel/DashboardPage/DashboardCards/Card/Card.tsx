@@ -24,8 +24,8 @@ const Card: FC<CardProps> = ({ dataMock }) => {
           overlayClassName={styles['danger-square__tooltip-panel']}
           title={alert}
           align={{ offset: [15, 0] }}
-          visible={visibleTooltip === id}
-          onVisibleChange={(visible) => setVisibleTooltip(visible ? id : null)}
+          open={visibleTooltip === id}
+          onOpenChange={(visible) => setVisibleTooltip(visible ? id : null)}
         >
           <span
             style={{ width: 15, height: 15, position: 'absolute', left: '0' }}
@@ -38,12 +38,11 @@ const Card: FC<CardProps> = ({ dataMock }) => {
       <div className={styles['cart-item__title']}>{title}</div>
       <div className={styles['cart-item__amount']}>{amount}</div>
       <div className={styles['cart-item__update-message']}>
-        آخرین آپدیت :{' '}
-        {new Date(updated_at).toLocaleString('fa-IR', {
+        Last Update:{' '}
+        {new Date(updated_at).toLocaleString('en', {
           hour: '2-digit',
           minute: '2-digit'
         })}{' '}
-        دقیقه
       </div>
     </div>
   ));

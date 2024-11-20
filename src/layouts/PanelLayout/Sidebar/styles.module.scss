@@ -4,17 +4,17 @@
   flex-direction: column;
   height: 100%;
   width: 22rem;
-  border-bottom-left-radius: 30px;
-  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
   overflow: hidden;
   background-color: #fff;
   transition: 0.25s ease-in-out;
 
   :global(.ant-tabs-ink-bar.ant-tabs-ink-bar-animated) {
     width: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    right: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    left: 0px;
   }
 }
 
@@ -39,7 +39,7 @@
 .text.hidden {
   width: 45px;
   opacity: 0;
-  margin-right: -60px;
+  margin-left: -60px;
 }
 
 .faq-tab-svg {

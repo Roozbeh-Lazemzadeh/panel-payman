@@ -39,14 +39,14 @@ const CustomPagination: React.FC<CustomPaginationProps> = ({
   return (
     <div className={styles['custom-pagination']}>
       <div className={styles['custom-pagination__selected-items']}>
-        تعداد موارد انتخاب شده :
+        Selected items:
         <div className={styles['custom-pagination__number-container']}>
           <span
-            className={`${styles['custom-pagination__number']} ${selectedItemsCount === 100 ? styles['custom-pagination__number--long'] : ''}`}
+            className={`${styles['custom-pagination__number']} ${selectedItemsCount >= 10 ? styles['custom-pagination__number--long'] : ''}`}
           >
             {selectedItemsCount}
           </span>
-          <span>عدد</span>
+          <span>items</span>
         </div>
       </div>
       <Pagination
@@ -61,7 +61,7 @@ const CustomPagination: React.FC<CustomPaginationProps> = ({
         itemRender={itemRender}
       />
       <div className={styles['custom-pagination__total-items']}>
-        کل لیست : {total}
+        Total list: {total}
       </div>
     </div>
   );

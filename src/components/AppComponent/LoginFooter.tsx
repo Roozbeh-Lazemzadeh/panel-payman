@@ -12,7 +12,7 @@ const LoginFooter: React.FC<LoginFooterProps> = () => {
         src='/assets/images/login/logo-footer.svg'
         alt='Payman Logo'
       />
-      توسعه‌یافته توسط پیمان
+      Developed by Payman
     </div>
   );
 };

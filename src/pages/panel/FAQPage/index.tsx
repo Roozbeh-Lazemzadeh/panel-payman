@@ -10,33 +10,33 @@ type CollapseItem = {
 
 const items: CollapseItem[] = [
   {
-    label: 'سرویس برداشت مستقیم پیمان چطور کار می کند؟',
-    text: 'پرداخت مستقیم راهکار هوشمند و نوین در صنعت پرداخت به شما کمک میکند خرید لذت بخش تر باشد . شما خیلی راحت میتوانید با بستن یک قرار داد به راحتی با هر یک از شرکت های لیست زیر فقط با زدن یک دکمه بدون ورود به صفحه درگاه پرداخت خرید های و تراکنش های خود را نهایی کنید . ',
+    label: 'How does the Payman Direct Debit Service work?',
+    text: 'Direct payment is an innovative and intelligent solution in the payment industry that helps make shopping more enjoyable. You can easily finalize your purchases and transactions with any of the companies listed below by simply clicking a button without navigating to the payment gateway page.',
     key: '1'
   },
   {
-    label: 'برای استفاده از سرویس پیمان به چه چیزی نیاز دارید؟',
-    text: 'پرداخت مستقیم راهکار هوشمند و نوین در صنعت پرداخت به شما کمک میکند خرید لذت بخش تر باشد . شما خیلی راحت میتوانید با بستن یک قرار داد به راحتی با هر یک از شرکت های لیست زیر فقط با زدن یک دکمه بدون ورود به صفحه درگاه پرداخت خرید های و تراکنش های خود را نهایی کنید . ',
+    label: 'What do you need to use the Payman service?',
+    text: 'Direct payment is an innovative and intelligent solution in the payment industry that helps make shopping more enjoyable. You can easily finalize your purchases and transactions with any of the companies listed below by simply clicking a button without navigating to the payment gateway page.',
     key: '2'
   },
   {
-    label: 'سرویس پیمان در کجا استفاده می شود؟',
-    text: 'پرداخت مستقیم راهکار هوشمند و نوین در صنعت پرداخت به شما کمک میکند خرید لذت بخش تر باشد . شما خیلی راحت میتوانید با بستن یک قرار داد به راحتی با هر یک از شرکت های لیست زیر فقط با زدن یک دکمه بدون ورود به صفحه درگاه پرداخت خرید های و تراکنش های خود را نهایی کنید . ',
+    label: 'Where is the Payman service used?',
+    text: 'Direct payment is an innovative and intelligent solution in the payment industry that helps make shopping more enjoyable. You can easily finalize your purchases and transactions with any of the companies listed below by simply clicking a button without navigating to the payment gateway page.',
     key: '3'
   },
   {
-    label: 'آیا این سرویس از مشتری کارمزد کسر می کند؟',
-    text: 'پرداخت مستقیم راهکار هوشمند و نوین در صنعت پرداخت به شما کمک میکند خرید لذت بخش تر باشد . شما خیلی راحت میتوانید با بستن یک قرار داد به راحتی با هر یک از شرکت های لیست زیر فقط با زدن یک دکمه بدون ورود به صفحه درگاه پرداخت خرید های و تراکنش های خود را نهایی کنید . ',
+    label: 'Does this service deduct fees from the customer?',
+    text: 'Direct payment is an innovative and intelligent solution in the payment industry that helps make shopping more enjoyable. You can easily finalize your purchases and transactions with any of the companies listed below by simply clicking a button without navigating to the payment gateway page.',
     key: '4'
   },
   {
-    label: 'سرویس پیمان چطور امنیت را تامین می کند؟',
-    text: 'پرداخت مستقیم راهکار هوشمند و نوین در صنعت پرداخت به شما کمک میکند خرید لذت بخش تر باشد . شما خیلی راحت میتوانید با بستن یک قرار داد به راحتی با هر یک از شرکت های لیست زیر فقط با زدن یک دکمه بدون ورود به صفحه درگاه پرداخت خرید های و تراکنش های خود را نهایی کنید . ',
+    label: 'How does the Payman service ensure security?',
+    text: 'Direct payment is an innovative and intelligent solution in the payment industry that helps make shopping more enjoyable. You can easily finalize your purchases and transactions with any of the companies listed below by simply clicking a button without navigating to the payment gateway page.',
     key: '5'
   },
   {
-    label: 'سرویس پیمان چطور امنیت را تامین می کند؟',
-    text: 'پرداخت مستقیم راهکار هوشمند و نوین در صنعت پرداخت به شما کمک میکند خرید لذت بخش تر باشد . شما خیلی راحت میتوانید با بستن یک قرار داد به راحتی با هر یک از شرکت های لیست زیر فقط با زدن یک دکمه بدون ورود به صفحه درگاه پرداخت خرید های و تراکنش های خود را نهایی کنید . ',
+    label: 'How does the Payman service ensure security?',
+    text: 'Direct payment is an innovative and intelligent solution in the payment industry that helps make shopping more enjoyable. You can easily finalize your purchases and transactions with any of the companies listed below by simply clicking a button without navigating to the payment gateway page.',
     key: '6'
   }
 ];
@@ -45,8 +45,8 @@ const FAQPage: FC = () => {
   return (
     <>
       <AppBanner
-        title='سوالات متداول'
-        description='برخی از سوالات پر تکرار شما در استفاده از پنل و یا سوالات فنی اولیه شما در این بخش نوشته شده است.'
+        title='Frequently Asked Questions'
+        description='Here are some of the most common questions you have about using the panel or initial technical queries.'
       />
       <AppCollapse list={items} />
     </>

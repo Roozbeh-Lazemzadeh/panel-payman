@@ -55,16 +55,16 @@ const FilterSection: FC = () => {
       form={transactionStatisticalReportForm}
       initialValues={initialValues}
     >
-      <Row gutter={[16, 16]} justify='start'>
+      <Row gutter={[16, 10]} justify='start'>
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='Banks'>
             <SelectInput
-              title='بانک'
+              title='Bank'
               search
               options={bankOptions}
-              placeholder='لطفا بانک مورد نظر خود را انتخاب کنید'
-              searchPlaceholder='نام بانک را جست‌و‌جو کنید.'
-              notFoundContent='بانکی یافت نشد'
+              placeholder='Please select your desired bank.'
+              searchPlaceholder='Search for the bank name.'
+              notFoundContent='No bank found.'
             />
           </Form.Item>
         </Col>
@@ -72,9 +72,9 @@ const FilterSection: FC = () => {
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='GroupTransactionType'>
             <SelectInput
-              title='دسته بندی تراکنش ها'
+              title='Transaction Category'
               options={transactionCategoryOptions}
-              placeholder='لطفا دسته مورد نظر خود را انتخاب کنید.'
+              placeholder='Please select your desired category.'
               icon
               singleSelect
             />
@@ -83,12 +83,12 @@ const FilterSection: FC = () => {
 
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='Date'>
-            <CalendarInput title='بازه تاریخ‌ تراکنش' isMandate={false} />
+            <CalendarInput title='Transaction Date Range' isMandate={false} />
           </Form.Item>
         </Col>
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='Amount'>
-            <PriceInput title='بازه مبلغ تراکنش' />
+            <PriceInput title='Transaction Amount Range' />
           </Form.Item>
         </Col>
 
@@ -102,7 +102,7 @@ const FilterSection: FC = () => {
         >
           <AppButton modifier='primary' onClick={handleSubmitForm}>
             <TickSquare />
-            اعمال فیلتر
+            Apply Filter
           </AppButton>
         </Col>
       </Row>

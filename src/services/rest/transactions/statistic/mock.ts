@@ -1,33 +1,33 @@
 import { TransactionsStatisticGetResponse } from './types';
 
 const bankNames = [
-  'ملی ',
-  'ملت',
-  'صادرات ',
-  'تجارت',
-  'پارسیان',
-  'پاسارگاد',
-  'سپه',
-  'اقتصاد نوین',
-  'کشاورزی',
-  'مسکن',
-  'رفاه کارگران',
-  'صنعت و معدن',
-  'سرمایه',
-  'کارآفرین',
-  'انصار'
+  'Melli',
+  'Mellat',
+  'Saderat',
+  'Tejarat',
+  'Parsian',
+  'Pasargad',
+  'Sepah',
+  'Eghtesad Novin',
+  'Keshavarzi',
+  'Maskan',
+  'Refah Kargaran',
+  'Sanat o Madan',
+  'Sarmayeh',
+  'Karafarin',
+  'Ansar'
 ];
 
 const mock: TransactionsStatisticGetResponse = {
   result: Array.from({ length: 110 }, (_, i) => ({
     Id: (i + 1).toString(),
     SourceBankName: bankNames[i % bankNames.length],
-    TransactionStartingDate: `1402/${Math.floor(1 + Math.random() * 11)
+    TransactionStartingDate: `2023/${Math.floor(1 + Math.random() * 11)
       .toString()
       .padStart(2, '0')}/${Math.floor(1 + Math.random() * 29)
       .toString()
       .padStart(2, '0')}`,
-    TransactionEndingDate: `1402/${Math.floor(1 + Math.random() * 11)
+    TransactionEndingDate: `2023/${Math.floor(1 + Math.random() * 11)
       .toString()
       .padStart(2, '0')}/${Math.floor(1 + Math.random() * 29)
       .toString()

@@ -66,33 +66,33 @@ const FilterSection: FC = () => {
       form={transactionRefundForm}
       initialValues={initialValues}
     >
-      <Row gutter={[16, 16]} justify='start'>
+      <Row gutter={[16, 10]} justify='start'>
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='Debtor'>
             <DefaultInput
-              title='کاربر'
-              placeholder='لطفا نام، شماره، کدملی کاربر مورد نظر را وارد کنید'
+              title='User'
+              placeholder='Please enter the name, number, or national ID of the user.'
             />
           </Form.Item>
         </Col>
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='Banks'>
             <SelectInput
-              title='بانک مقصد'
+              title='Destination Bank'
               search
               options={bankOptions}
-              placeholder='لطفا بانک مورد نظر خود را انتخاب کنید'
-              searchPlaceholder='نام بانک را جست‌و‌جو کنید.'
-              notFoundContent='بانکی یافت نشد'
+              placeholder='Please select your desired bank.'
+              searchPlaceholder='Search for the bank name.'
+              notFoundContent='No bank found.'
             />
           </Form.Item>
         </Col>
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='TransactionStatus'>
             <SelectInput
-              title='وضعیت تراکنش'
+              title='Transaction Status'
               options={transactionStatusOptions}
-              placeholder='لطفا وضعیت مورد نظر خود را انتخاب کنید.'
+              placeholder='Please select your desired status.'
               icon
             />
           </Form.Item>
@@ -100,9 +100,9 @@ const FilterSection: FC = () => {
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='MandateStatus'>
             <SelectInput
-              title='وضعیت پیمان'
+              title='Mandate Status'
               options={paymanStatusOptions}
-              placeholder='لطفا وضعیت مورد نظر خود را انتخاب کنید.'
+              placeholder='Please select your desired status.'
               icon
             />
           </Form.Item>
@@ -110,50 +110,50 @@ const FilterSection: FC = () => {
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='TraceId'>
             <DefaultInput
-              title='شناسه پیگیری'
-              placeholder='لطفا شناسه مورد نظر خود را وارد کنید.'
+              title='Tracking ID'
+              placeholder='Please enter your desired tracking ID.'
             />
           </Form.Item>
         </Col>
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='RefundId'>
             <DefaultInput
-              title='شناسه پیگیری تراکنش اصلی'
-              placeholder='لطفا شناسه پیگیری مورد نظر خود را وارد کنید.'
+              title='Original Transaction Tracking ID'
+              placeholder='Please enter your desired tracking ID.'
             />
           </Form.Item>
         </Col>
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='ReferenceId'>
             <DefaultInput
-              title='شناسه مرجع'
-              placeholder='لطفا شناسه مورد نظر خود را وارد کنید.'
+              title='Reference ID'
+              placeholder='Please enter your desired reference ID.'
             />
           </Form.Item>
         </Col>
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='Umr'>
             <DefaultInput
-              title='شناسه پیمان'
-              placeholder='لطفا شناسه مورد نظر خود را وارد کنید.'
+              title='Mandate ID'
+              placeholder='Please enter your desired mandate ID.'
             />
           </Form.Item>
         </Col>
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='Date'>
-            <CalendarInput title='بازه تاریخ‌ تراکنش' isMandate={false} />
+            <CalendarInput title='Transaction Date Range' isMandate={false} />
           </Form.Item>
         </Col>
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='Amount'>
-            <PriceInput title='بازه مبلغ تراکنش' />
+            <PriceInput title='Transaction Amount Range' />
           </Form.Item>
         </Col>
         <Col xs={24} md={8} lg={8} xl={8} xxl={6}>
           <Form.Item name='Description'>
             <DefaultInput
-              title='توضیحات'
-              placeholder='توضیحات مورد نظر خود را بنویسید.'
+              title='Description'
+              placeholder='Please write your desired description.'
             />
           </Form.Item>
         </Col>
@@ -168,7 +168,7 @@ const FilterSection: FC = () => {
         >
           <AppButton modifier='primary' onClick={handleSubmitForm}>
             <TickSquare />
-            اعمال فیلتر
+            Apply Filter
           </AppButton>
         </Col>
       </Row>

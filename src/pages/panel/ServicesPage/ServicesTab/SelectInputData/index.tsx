@@ -7,113 +7,113 @@ const serviceOptions = [
   {
     key: '1',
     label: 'direct-fund-withdrawal-tracking',
-    value: 'پیگیری برداشت وجه مستقیم',
-    rawLabel: 'پیگیری برداشت وجه مستقیم'
+    value: 'Direct Fund Withdrawal Tracking',
+    rawLabel: 'Direct Fund Withdrawal Tracking'
   },
   {
     key: '2',
     label: 'payman-transactions',
-    value: 'تراکنش‌های پیمان',
-    rawLabel: 'تراکنش‌های پیمان'
+    value: 'Payman Transactions',
+    rawLabel: 'Payman Transactions'
   },
   {
     key: '3',
     label: 'receive-account-statement-list',
-    value: 'دریافت لیست صورت حساب سپرده از بوم',
-    rawLabel: 'دریافت لیست صورت حساب سپرده از بوم'
+    value: 'Receive Account Statement List from Boom',
+    rawLabel: 'Receive Account Statement List from Boom'
   },
   {
     key: '4',
     label: 'transfer-approval',
-    value: 'تایید واگذاری',
-    rawLabel: 'تایید واگذاری'
+    value: 'Transfer Approval',
+    rawLabel: 'Transfer Approval'
   },
   {
     key: '5',
     label: 'store-contract-in-database',
-    value: 'ذخیره قرارداد در دیتابیس',
-    rawLabel: 'ذخیره قرارداد در دیتابیس'
+    value: 'Store Contract in Database',
+    rawLabel: 'Store Contract in Database'
   },
   {
     key: '6',
     label: 'receive-payman-token',
-    value: 'دریافت توکن پیمان',
-    rawLabel: 'دریافت توکن پیمان'
+    value: 'Receive Payman Token',
+    rawLabel: 'Receive Payman Token'
   },
   {
     key: '7',
     label: 'institute-access-list',
-    value: 'لیست دسترسی‌های موسسه',
-    rawLabel: 'لیست دسترسی‌های موسسه'
+    value: 'Institute Access List',
+    rawLabel: 'Institute Access List'
   },
   {
     key: '8',
     label: 'create-payman',
-    value: 'ایجاد پیمان',
-    rawLabel: 'ایجاد پیمان'
+    value: 'Create Payman',
+    rawLabel: 'Create Payman'
   },
   {
     key: '9',
     label: 'update-payman',
-    value: 'بروزرسانی پیمان',
-    rawLabel: 'بروزرسانی پیمان'
+    value: 'Update Payman',
+    rawLabel: 'Update Payman'
   },
   {
     key: '10',
     label: 'receive-payman-id',
-    value: 'دریافت شناسه پیمان',
-    rawLabel: 'دریافت شناسه پیمان'
+    value: 'Receive Payman ID',
+    rawLabel: 'Receive Payman ID'
   },
   {
     key: '11',
     label: 'change-payman-status',
-    value: 'تغییر وضعیت پیمان',
-    rawLabel: 'تغییر وضعیت پیمان'
+    value: 'Change Payman Status',
+    rawLabel: 'Change Payman Status'
   },
   {
     key: '12',
     label: 'track-create-payman',
-    value: 'پیگیری ایجاد یک پیمان',
-    rawLabel: 'پیگیری ایجاد یک پیمان'
+    value: 'Track Payman Creation',
+    rawLabel: 'Track Payman Creation'
   }
 ];
 
 const bankOptions = [
-  { key: '1', label: 'saman', value: 'سامان' },
-  { key: '2', label: 'mellat', value: 'ملت' },
-  { key: '3', label: 'tejarat', value: 'تجارت' },
-  { key: '4', label: 'melli', value: 'ملی' }
+  { key: '1', label: 'saman', value: 'Saman' },
+  { key: '2', label: 'mellat', value: 'Mellat' },
+  { key: '3', label: 'tejarat', value: 'Tejarat' },
+  { key: '4', label: 'melli', value: 'Melli' }
 ];
 
 const serviceStatusOptions = [
   {
     key: '1',
     label: 'successful',
-    value: 'موفق',
+    value: 'Successful',
     icon: <GreenDot />
   },
   {
     key: '2',
     label: 'unsuccessful',
-    value: 'ناموفق',
+    value: 'Unsuccessful',
     icon: <RedDot />
   },
   {
     key: '3',
     label: 'pending',
-    value: 'منتظر تایید',
+    value: 'Pending Approval',
     icon: <OrangeDot />
   },
   {
     key: '4',
     label: 'canceled',
-    value: 'لغو شده',
+    value: 'Canceled',
     icon: <YellowDot />
   },
   {
     key: '5',
     label: 'expired',
-    value: 'منقضی شده',
+    value: 'Expired',
     icon: <RedDot />
   }
 ];

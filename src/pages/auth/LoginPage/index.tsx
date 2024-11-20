@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import LoginLayout from 'layouts/LoginLayout';
@@ -47,10 +47,6 @@ const LoginPage = () => {
     ),
     []
   );
-
-  useEffect(() => {
-    console.log('Project deployed successfully.');
-  }, []);
 
   return (
     <div className={'login-wrapper'}>

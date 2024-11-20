@@ -2,70 +2,70 @@ const serviceOptions = [
   {
     key: '1',
     label: 'direct-fund-withdrawal-tracking',
-    value: 'پیگیری برداشت وجه مستقیم'
+    value: 'Direct Fund Withdrawal Tracking'
   },
   {
     key: '2',
     label: 'payman-transactions',
-    value: 'تراکنش‌های پیمان'
+    value: 'Payman Transactions'
   },
   {
     key: '3',
     label: 'receive-account-statement-list',
-    value: 'دریافت لیست صورت حساب سپرده از بوم'
+    value: 'Receive Deposit Statement List from Boom'
   },
   {
     key: '4',
     label: 'transfer-approval',
-    value: 'تایید واگذاری'
+    value: 'Transfer Approval'
   },
   {
     key: '5',
     label: 'store-contract-in-database',
-    value: 'ذخیره قرارداد در دیتابیس'
+    value: 'Store Contract in Database'
   },
   {
     key: '6',
     label: 'receive-payman-token',
-    value: 'دریافت توکن پیمان'
+    value: 'Receive Payman Token'
   },
   {
     key: '7',
     label: 'institute-access-list',
-    value: 'لیست دسترسی‌های موسسه'
+    value: 'Institute Access List'
   },
   {
     key: '8',
     label: 'create-payman',
-    value: 'ایجاد پیمان'
+    value: 'Create Payman'
   },
   {
     key: '9',
     label: 'update-payman',
-    value: 'بروزرسانی پیمان'
+    value: 'Update Payman'
   },
   {
     key: '10',
     label: 'receive-payman-id',
-    value: 'دریافت شناسه پیمان'
+    value: 'Receive Payman ID'
   },
   {
     key: '11',
     label: 'change-payman-status',
-    value: 'تغییر وضعیت پیمان'
+    value: 'Change Payman Status'
   },
   {
     key: '12',
     label: 'track-create-payman',
-    value: 'پیگیری ایجاد یک پیمان'
+    value: 'Track Payman Creation'
   }
 ];
 
 const bankOptions = [
-  { key: '1', label: 'saman', value: 'سامان' },
-  { key: '2', label: 'mellat', value: 'ملت' },
-  { key: '3', label: 'tejarat', value: 'تجارت' },
-  { key: '4', label: 'melli', value: 'ملی' }
+  { key: '1', label: 'saman', value: 'Saman' },
+  { key: '2', label: 'mellat', value: 'Mellat' },
+  { key: '3', label: 'tejarat', value: 'Tejarat' },
+  { key: '4', label: 'melli', value: 'Melli' }
 ];
 
 export { serviceOptions, bankOptions };
