@@ -150,6 +150,7 @@ const SelectInput: FC<Props> = ({
           : undefined;
       })
       .filter(Boolean);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedValues, singleSelect, options]);
 
   return (
