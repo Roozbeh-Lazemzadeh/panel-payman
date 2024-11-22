@@ -9,15 +9,15 @@ import './styles.css';
 const mock = [
   {
     id: '1',
-    img: '/assets/images/login/slider1.svg'
+    img: '/assets/images/slider1.svg'
   },
   {
     id: '2',
-    img: '/assets/images/login/slider2.svg'
+    img: '/assets/images/slider2.svg'
   },
   {
     id: '3',
-    img: '/assets/images/login/slider3.svg'
+    img: '/assets/images/slider3.svg'
   }
 ];
 
@@ -51,11 +51,7 @@ const LoginPage = () => {
   return (
     <div className={'login-wrapper'}>
       <div className={'login-wrapper_img'}>
-        <img
-          className={'login-img'}
-          src='/assets/images/login/pattern.svg'
-          alt=''
-        />
+        <img className={'login-img'} src='/assets/images/pattern.svg' alt='' />
       </div>
       <div className={'login-container'}>
         <LoginLayout name=''>

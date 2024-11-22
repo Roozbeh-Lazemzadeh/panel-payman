@@ -9,7 +9,7 @@ const LoginLayout: FC<Props> = ({ children, name }) => {
     <>
       <img
         className={`${styles['login-layout_img']}`}
-        src='/assets/images/login/Logo-mark.svg'
+        src='/assets/images/Logo-mark.svg'
         alt=''
       />
       {children}

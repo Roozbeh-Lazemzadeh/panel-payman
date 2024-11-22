@@ -24,7 +24,7 @@ const SidebarFooter: React.FC<SidebarFooterProps> = ({ sidebarOpen }) => {
       title='logout'
     >
       <div className={styles.logout} onClick={logoOutClickHandler}>
-        <img src='/assets/pics/Logout.svg' alt='logout' />
+        <img src='/assets/images/Logout.svg' alt='logout' />
         <span
           className={`${styles['exit-text']} ${!sidebarOpen ? styles.hidden : ''}`}
         >

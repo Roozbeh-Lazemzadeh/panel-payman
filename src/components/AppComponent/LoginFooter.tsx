@@ -9,7 +9,7 @@ const LoginFooter: React.FC<LoginFooterProps> = () => {
     <div className={`${styles['footer-wrapper']}`}>
       <img
         className={`${styles['footer-wrapper_img']}`}
-        src='/assets/images/login/logo-footer.svg'
+        src='/assets/images/logo-footer.svg'
         alt='Payman Logo'
       />
       Developed by Payman

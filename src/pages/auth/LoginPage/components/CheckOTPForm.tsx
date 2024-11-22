@@ -113,7 +113,7 @@ const CheckOTPForm: FC<CheckOTPFormProps> = ({ setStep }) => {
         >
           <img
             className={styles['login-check_img']}
-            src='/assets/images/login/Swap.svg'
+            src='/assets/images/Swap.svg'
             alt=''
           />
           Change Mobile Number or Username
